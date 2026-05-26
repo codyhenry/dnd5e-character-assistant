@@ -19,7 +19,7 @@
     <select id="build-jump" class="build-select" onchange="if(this.value) window.location.href = this.value;">
       <option value="">Select a build...</option>
       {% for build in campaign_builds %}
-      <option value="{% url 'characters:detail' build.pk %}" {% if build.pk == object.pk %}selected{% endif %}>
+      <option value="{% url 'characters:detail' build.pk %}" {% if build.pk==object.pk %}selected{% endif %}>
         {{ build.name }}
       </option>
       {% endfor %}
