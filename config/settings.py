@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import dj_database_url
 
@@ -6,6 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-+&1loylpo=&ir8qe8(x55=)71x=b9aft*)#7kqs=@p-q(7+4ye'
 DEBUG = True
+# TODO: change this to False and set up proper allowed hosts before deploying
 ALLOWED_HOSTS = [
     'dnd5e-character-assistant.onrender.com',
     'localhost',
@@ -66,6 +68,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
         conn_max_age=600,
     )
 }
