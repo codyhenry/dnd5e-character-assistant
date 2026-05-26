@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ object.name }}</h1>
+<p>Campaign: {{ object.campaign.name }}</p>
+<p>Character level: {{ object.character_level }}</p>
+<p>Species/Race/Lineage: {{ object.species_option }}</p>
+<p>Background: {{ object.background_option }}</p>
+<p>Class progression:</p>
+<ul>
+  {% for level in object.class_levels.all %}
+    <li>{{ level.class_option }} {% if level.subclass_option %}({{ level.subclass_option }}){% endif %} x{{ level.level_count }}</li>
+  {% empty %}
+    <li>No class levels yet.</li>
+  {% endfor %}
+</ul>
+<h2>Ability Scores</h2>
+<ul>
+  <li>Strength: {{ sheet.ability_scores.strength }} (mod {{ sheet.ability_modifiers.strength }})</li>
+  <li>Dexterity: {{ sheet.ability_scores.dexterity }} (mod {{ sheet.ability_modifiers.dexterity }})</li>
+  <li>Constitution: {{ sheet.ability_scores.constitution }} (mod {{ sheet.ability_modifiers.constitution }})</li>
+  <li>Intelligence: {{ sheet.ability_scores.intelligence }} (mod {{ sheet.ability_modifiers.intelligence }})</li>
+  <li>Wisdom: {{ sheet.ability_scores.wisdom }} (mod {{ sheet.ability_modifiers.wisdom }})</li>
+  <li>Charisma: {{ sheet.ability_scores.charisma }} (mod {{ sheet.ability_modifiers.charisma }})</li>
+</ul>
+<p>Proficiency bonus: {{ sheet.proficiency_bonus }}</p>
+<p>HP Max: {{ sheet.hp_max }}</p>
+<p>Armor Class: {{ sheet.armor_class }}</p>
+<p>Initiative: {{ sheet.initiative }}</p>
+<p>Speed: {{ sheet.speed }}</p>
+<p>Spellcasting class: {{ sheet.spellcasting_class }}</p>
+<p>Spellcasting ability: {{ sheet.spellcasting_ability }}</p>
+<p>Spell save DC: {{ sheet.spell_save_dc }}</p>
+<p>Spell attack bonus: {{ sheet.spell_attack_bonus }}</p>
+<h2>Attacks</h2>
+<ul>
+  {% for attack in object.attacks_actions.all %}
+    <li>{{ attack.name }} | source: {{ attack.source_category }}</li>
+  {% empty %}
+    <li>No attacks selected.</li>
+  {% endfor %}
+</ul>
+<h2>Equipment</h2>
+<ul>
+  {% for item in object.selected_equipment.all %}
+    <li>{{ item.name }} - {{ item.description }}</li>
+  {% empty %}
+    <li>No equipment selected.</li>
+  {% endfor %}
+</ul>
+<h2>Features and Traits</h2>
+<ul>
+  {% for feature in object.selected_features.all %}
+    <li>{{ feature.name }} - {{ feature.description }}</li>
+  {% empty %}
+    <li>No features selected.</li>
+  {% endfor %}
+</ul>
+<h2>Cantrips / Spells</h2>
+<ul>
+  {% for spell in object.selected_spells.all %}
+    <li>{{ spell.name }}</li>
+  {% empty %}
+    <li>No spells selected.</li>
+  {% endfor %}
+</ul>
+<p>Notes: {{ object.notes }}</p>
+<p><a href="{% url 'characters:edit' object.pk %}">Edit build</a></p>
+{% endblock %}

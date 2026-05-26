@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Builds: {{ campaign.name }}</h1>
+<ul>
+  {% for build in object_list %}
+    <li><a href="{% url 'characters:detail' build.pk %}">{{ build.name }}</a> - {{ build.owner.username }} - {{ build.status }}</li>
+  {% empty %}
+    <li>No builds yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

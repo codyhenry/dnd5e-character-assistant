@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>DM Dashboard: {{ campaign.name }}</h1>
+<p><a href="{% url 'characters:dm_all_builds' campaign.pk %}">View all builds</a></p>
+<ul>
+  {% for build in builds %}
+    <li><a href="{% url 'characters:detail' build.pk %}">{{ build.name }}</a> ({{ build.status }})</li>
+  {% empty %}
+    <li>No builds yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
