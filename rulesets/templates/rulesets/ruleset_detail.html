@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ object.name }}</h1>
+<p>Campaign: {{ object.campaign.name }}</p>
+<p>Required level: {{ object.required_character_level }}</p>
+<p>Starting gold formula: {{ object.starting_gold_formula }}</p>
+<p>Allowed source categories: {{ object.allowed_source_categories }}</p>
+<p>Multiclassing allowed: {{ object.allow_multiclassing }}</p>
+<p>Feats allowed: {{ object.allow_feats }}</p>
+{% if can_view_hidden_guidance %}
+  <h2>Hidden AI Guidance</h2>
+  <p>{{ object.hidden_ai_guidance }}</p>
+{% endif %}
+<p><a href="{% url 'rulesets:edit' object.pk %}">Edit ruleset</a></p>
+{% endblock %}

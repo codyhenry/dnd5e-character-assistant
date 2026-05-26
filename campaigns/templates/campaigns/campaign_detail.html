@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ object.name }}</h1>
+<p>{{ object.description }}</p>
+<p>
+  <a href="{% url 'campaigns:edit' object.pk %}">Edit campaign</a> |
+  <a href="{% url 'campaigns:manage_members' object.pk %}">Manage members</a> |
+  <a href="{% url 'campaigns:dm_dashboard' object.pk %}">DM dashboard</a> |
+  {% if object.active_ruleset %}
+    <a href="{% url 'rulesets:detail' object.active_ruleset.pk %}">View ruleset</a>
+  {% else %}
+    <a href="{% url 'rulesets:create' object.pk %}">Create ruleset</a>
+  {% endif %}
+</p>
+{% endblock %}

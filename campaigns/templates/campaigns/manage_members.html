@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Manage Members: {{ object.name }}</h1>
+<ul>
+  {% for membership in object.memberships.all %}
+    <li>{{ membership.user.username }} - {{ membership.role }}</li>
+  {% empty %}
+    <li>No members yet.</li>
+  {% endfor %}
+</ul>
+<form method="post">
+  {% csrf_token %}
+  {{ membership_form.as_p }}
+  <button type="submit">Add or Update Membership</button>
+</form>
+{% endblock %}

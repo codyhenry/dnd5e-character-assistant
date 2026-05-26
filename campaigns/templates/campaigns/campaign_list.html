@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Your Campaigns</h1>
+<p><a href="{% url 'campaigns:create' %}">Create campaign</a></p>
+<ul>
+  {% for campaign in object_list %}
+    <li><a href="{% url 'campaigns:detail' campaign.pk %}">{{ campaign.name }}</a></li>
+  {% empty %}
+    <li>No campaigns yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

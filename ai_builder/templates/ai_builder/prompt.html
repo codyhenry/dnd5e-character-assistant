@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>AI-Assisted Character Creation</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Generate Candidate Build</button>
+</form>
+
+{% if intent %}
+  <h2>Extracted Intent</h2>
+  <pre>{{ intent }}</pre>
+{% endif %}
+
+{% if candidate_build %}
+  <h2>Candidate Build</h2>
+  <pre>{{ candidate_build }}</pre>
+{% endif %}
+
+{% if legal_options %}
+  <h2>Legal Options</h2>
+  <ul>
+    {% for option in legal_options %}
+      <li>{{ option.name }} ({{ option.option_type }})</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endblock %}
