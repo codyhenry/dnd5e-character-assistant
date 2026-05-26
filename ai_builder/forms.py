@@ -1,5 +1,7 @@
 from django import forms
 
+from campaigns.models import Campaign
+
 
 class AICharacterPromptForm(forms.Form):
     campaign = forms.ModelChoiceField(queryset=None)
@@ -8,4 +10,7 @@ class AICharacterPromptForm(forms.Form):
     def __init__(self, *args, user=None, **kwargs):
         super().__init__(*args, **kwargs)
         if user is not None:
-            self.fields['campaign'].queryset = user.campaigns.all()
+            self.fields['campaign'].queryset = Campaign.objects.filter(
+                memberships__user=user,
+                status=Campaign.Status.ACTIVE,
+            ).distinct()

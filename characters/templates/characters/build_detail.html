@@ -1,16 +1,163 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>{{ object.name }}</h1>
-<p>Campaign: {{ object.campaign.name }}</p>
-<p>Character level: {{ object.character_level }}</p>
-<p>Species/Race/Lineage: {{ object.species_option }}</p>
-<p>Background: {{ object.background_option }}</p>
+
+{% if campaign_builds %}
+<div class="build-nav-bar">
+  <div class="build-nav-controls">
+    {% if prev_build_id %}
+    <a href="{% url 'characters:detail' prev_build_id %}" class="nav-btn nav-prev" title="Previous build">
+      ‹ Previous
+    </a>
+    {% else %}
+    <button class="nav-btn nav-prev" disabled title="No previous build">‹ Previous</button>
+    {% endif %}
+  </div>
+
+  <div class="build-nav-selector">
+    <label for="build-jump" class="build-label">Jump to:</label>
+    <select id="build-jump" class="build-select" onchange="if(this.value) window.location.href = this.value;">
+      <option value="">Select a build...</option>
+      {% for build in campaign_builds %}
+      <option value="{% url 'characters:detail' build.pk %}" {% if build.pk == object.pk %}selected{% endif %}>
+        {{ build.name }}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="build-nav-controls">
+    {% if next_build_id %}
+    <a href="{% url 'characters:detail' next_build_id %}" class="nav-btn nav-next" title="Next build">
+      Next ›
+    </a>
+    {% else %}
+    <button class="nav-btn nav-next" disabled title="No next build">Next ›</button>
+    {% endif %}
+  </div>
+</div>
+<style>
+  .build-nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 1rem 0 2rem 0;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(122, 32, 22, 0.08) 0%, rgba(185, 134, 55, 0.08) 100%);
+    border: 1px solid rgba(185, 134, 55, 0.3);
+    border-radius: 0.5rem;
+  }
+
+  .build-nav-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #b68637 0%, #7a561d 100%);
+    color: #efe0bf;
+    border: 1px solid #7a561d;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+  }
+
+  .nav-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #c99a48 0%, #8a6629 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .build-nav-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .build-label {
+    font-weight: 500;
+    color: #7a561d;
+    white-space: nowrap;
+    font-size: 0.95rem;
+  }
+
+  .build-select {
+    padding: 0.5rem 0.75rem;
+    background: #efe0bf;
+    color: #231817;
+    border: 1px solid #b89663;
+    border-radius: 0.375rem;
+    font-size: 0.95rem;
+    min-width: 180px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+  }
+
+  .build-select:focus {
+    outline: none;
+    border-color: #b68637;
+    box-shadow: 0 0 0 3px rgba(185, 134, 55, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .build-nav-bar {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .build-nav-controls {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .build-nav-selector {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .build-select {
+      flex: 1;
+      max-width: 100%;
+    }
+  }
+</style>
+{% endif %}
+
+<div class="kv-list">
+  <div class="kv-row">
+    <div class="kv-key">Campaign</div>
+    <div class="kv-value">{{ object.campaign.name }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Character level</div>
+    <div class="kv-value">{{ object.character_level }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Species/Race/Lineage</div>
+    <div class="kv-value">{{ object.species_option }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Background</div>
+    <div class="kv-value">{{ object.background_option }}</div>
+  </div>
+</div>
 <p>Class progression:</p>
 <ul>
   {% for level in object.class_levels.all %}
-    <li>{{ level.class_option }} {% if level.subclass_option %}({{ level.subclass_option }}){% endif %} x{{ level.level_count }}</li>
+  <li>{{ level.class_option }} {% if level.subclass_option %}({{ level.subclass_option }}){% endif %} x{{
+    level.level_count }}</li>
   {% empty %}
-    <li>No class levels yet.</li>
+  <li>No class levels yet.</li>
   {% endfor %}
 </ul>
 <h2>Ability Scores</h2>
@@ -22,47 +169,81 @@
   <li>Wisdom: {{ sheet.ability_scores.wisdom }} (mod {{ sheet.ability_modifiers.wisdom }})</li>
   <li>Charisma: {{ sheet.ability_scores.charisma }} (mod {{ sheet.ability_modifiers.charisma }})</li>
 </ul>
-<p>Proficiency bonus: {{ sheet.proficiency_bonus }}</p>
-<p>HP Max: {{ sheet.hp_max }}</p>
-<p>Armor Class: {{ sheet.armor_class }}</p>
-<p>Initiative: {{ sheet.initiative }}</p>
-<p>Speed: {{ sheet.speed }}</p>
-<p>Spellcasting class: {{ sheet.spellcasting_class }}</p>
-<p>Spellcasting ability: {{ sheet.spellcasting_ability }}</p>
-<p>Spell save DC: {{ sheet.spell_save_dc }}</p>
-<p>Spell attack bonus: {{ sheet.spell_attack_bonus }}</p>
+<div class="kv-list">
+  <div class="kv-row">
+    <div class="kv-key">Proficiency bonus</div>
+    <div class="kv-value">{{ sheet.proficiency_bonus }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">HP Max</div>
+    <div class="kv-value">{{ sheet.hp_max }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Armor Class</div>
+    <div class="kv-value">{{ sheet.armor_class }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Initiative</div>
+    <div class="kv-value">{{ sheet.initiative }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Speed</div>
+    <div class="kv-value">{{ sheet.speed }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Spellcasting class</div>
+    <div class="kv-value">{{ sheet.spellcasting_class }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Spellcasting ability</div>
+    <div class="kv-value">{{ sheet.spellcasting_ability }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Spell save DC</div>
+    <div class="kv-value">{{ sheet.spell_save_dc }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Spell attack bonus</div>
+    <div class="kv-value">{{ sheet.spell_attack_bonus }}</div>
+  </div>
+</div>
 <h2>Attacks</h2>
 <ul>
   {% for attack in object.attacks_actions.all %}
-    <li>{{ attack.name }} | source: {{ attack.source_category }}</li>
+  <li>{{ attack.name }} | source: {{ attack.source_category }}</li>
   {% empty %}
-    <li>No attacks selected.</li>
+  <li>No attacks selected.</li>
   {% endfor %}
 </ul>
 <h2>Equipment</h2>
 <ul>
   {% for item in object.selected_equipment.all %}
-    <li>{{ item.name }} - {{ item.description }}</li>
+  <li>{{ item.name }} - {{ item.description }}</li>
   {% empty %}
-    <li>No equipment selected.</li>
+  <li>No equipment selected.</li>
   {% endfor %}
 </ul>
 <h2>Features and Traits</h2>
 <ul>
   {% for feature in object.selected_features.all %}
-    <li>{{ feature.name }} - {{ feature.description }}</li>
+  <li>{{ feature.name }} - {{ feature.description }}</li>
   {% empty %}
-    <li>No features selected.</li>
+  <li>No features selected.</li>
   {% endfor %}
 </ul>
 <h2>Cantrips / Spells</h2>
 <ul>
   {% for spell in object.selected_spells.all %}
-    <li>{{ spell.name }}</li>
+  <li>{{ spell.name }}</li>
   {% empty %}
-    <li>No spells selected.</li>
+  <li>No spells selected.</li>
   {% endfor %}
 </ul>
-<p>Notes: {{ object.notes }}</p>
-<p><a href="{% url 'characters:edit' object.pk %}">Edit build</a></p>
+<div class="kv-list">
+  <div class="kv-row">
+    <div class="kv-key">Notes</div>
+    <div class="kv-value">{{ object.notes }}</div>
+  </div>
+</div>
+<p class="action-links"><a href="{% url 'characters:edit' object.pk %}">Edit build</a></p>
 {% endblock %}

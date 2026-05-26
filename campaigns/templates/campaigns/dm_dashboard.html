@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>DM Dashboard: {{ campaign.name }}</h1>
-<p><a href="{% url 'characters:dm_all_builds' campaign.pk %}">View all builds</a></p>
-<ul>
+<p class="action-links"><a href="{% url 'characters:dm_all_builds' campaign.pk %}">View all builds</a></p>
+<ul class="record-list">
   {% for build in builds %}
-    <li><a href="{% url 'characters:detail' build.pk %}">{{ build.name }}</a> ({{ build.status }})</li>
+  <li>
+    <a href="{% url 'characters:detail' build.pk %}" class="record-link">
+      <span class="record-title">{{ build.name }}</span>
+      <span class="record-meta">{{ build.status }} • Created {{ build.created_at|date:"M j, Y" }}</span>
+    </a>
+  </li>
   {% empty %}
-    <li>No builds yet.</li>
+  <li class="record-empty">No builds yet.</li>
   {% endfor %}
 </ul>
 {% endblock %}

@@ -18,7 +18,8 @@ class PlayerDashboardView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['campaigns'] = Campaign.objects.filter(memberships__user=self.request.user).distinct()
+        context['campaigns'] = Campaign.objects.filter(
+            memberships__user=self.request.user).distinct()
         context['builds'] = visible_builds_for_user(self.request.user)
         return context
 
@@ -44,6 +45,23 @@ class CharacterBuildDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['sheet'] = build_character_sheet_context(self.object)
+
+        # Add campaign build navigation for DMs
+        campaign = self.object.campaign
+        if is_campaign_dm(self.request.user, campaign):
+            campaign_builds = campaign_builds_for_dm(
+                self.request.user, campaign).order_by('name')
+            context['campaign_builds'] = campaign_builds
+
+            # Find current build's position
+            build_list = list(campaign_builds.values_list('pk', flat=True))
+            if self.object.pk in build_list:
+                current_index = build_list.index(self.object.pk)
+                if current_index > 0:
+                    context['prev_build_id'] = build_list[current_index - 1]
+                if current_index < len(build_list) - 1:
+                    context['next_build_id'] = build_list[current_index + 1]
+
         return context
 
 
@@ -51,6 +69,11 @@ class CharacterBuildCreateView(LoginRequiredMixin, CreateView):
     model = CharacterBuild
     form_class = CharacterBuildForm
     template_name = 'characters/build_form.html'
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
 
     def get_initial(self):
         initial = super().get_initial()

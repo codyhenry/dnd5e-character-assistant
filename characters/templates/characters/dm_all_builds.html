@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>All Builds: {{ campaign.name }}</h1>
-<ul>
+<ul class="record-list">
   {% for build in object_list %}
-    <li><a href="{% url 'characters:detail' build.pk %}">{{ build.name }}</a> - {{ build.owner.username }} - {{ build.status }}</li>
+  <li>
+    <a href="{% url 'characters:detail' build.pk %}" class="record-link">
+      <span class="record-title">{{ build.name }}</span>
+      <span class="record-meta">{{ build.owner.username }} • {{ build.status }} • Created {{ build.created_at|date:"M j, Y" }}</span>
+    </a>
+  </li>
   {% empty %}
-    <li>No builds yet.</li>
+  <li class="record-empty">No builds yet.</li>
   {% endfor %}
 </ul>
 {% endblock %}

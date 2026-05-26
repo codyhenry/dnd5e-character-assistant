@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{ object.name }}</h1>
+<div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+  <h1 class="mb-0 border-0 pb-0">{{ object.name }}</h1>
+  <span
+    class="{% if object.status == 'ACTIVE' %}status-badge status-badge-active{% else %}status-badge status-badge-ended{% endif %}">
+    {{ object.get_status_display }}
+  </span>
+</div>
 <p>{{ object.description }}</p>
-<p>
-  <a href="{% url 'campaigns:edit' object.pk %}">Edit campaign</a> |
-  <a href="{% url 'campaigns:manage_members' object.pk %}">Manage members</a> |
-  <a href="{% url 'campaigns:dm_dashboard' object.pk %}">DM dashboard</a> |
+<p class="action-links">
+  <a href="{% url 'campaigns:edit' object.pk %}">Edit campaign</a>
+  <a href="{% url 'campaigns:manage_members' object.pk %}">Manage members</a>
+  <a href="{% url 'campaigns:dm_dashboard' object.pk %}">DM dashboard</a>
   {% if object.active_ruleset %}
-    <a href="{% url 'rulesets:detail' object.active_ruleset.pk %}">View ruleset</a>
+  <a href="{% url 'rulesets:detail' object.active_ruleset.pk %}">View ruleset</a>
   {% else %}
-    <a href="{% url 'rulesets:create' object.pk %}">Create ruleset</a>
+  <a href="{% url 'rulesets:create' object.pk %}">Create ruleset</a>
   {% endif %}
 </p>
 {% endblock %}

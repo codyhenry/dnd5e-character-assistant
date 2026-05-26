@@ -1,15 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>{{ object.name }}</h1>
-<p>Campaign: {{ object.campaign.name }}</p>
-<p>Required level: {{ object.required_character_level }}</p>
-<p>Starting gold formula: {{ object.starting_gold_formula }}</p>
-<p>Allowed source categories: {{ object.allowed_source_categories }}</p>
-<p>Multiclassing allowed: {{ object.allow_multiclassing }}</p>
-<p>Feats allowed: {{ object.allow_feats }}</p>
+<div class="kv-list">
+  <div class="kv-row">
+    <div class="kv-key">Campaign</div>
+    <div class="kv-value">{{ object.campaign.name }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Required level</div>
+    <div class="kv-value">{{ object.required_character_level }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Starting gold formula</div>
+    <div class="kv-value">{{ object.starting_gold_formula }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Allowed source categories</div>
+    <div class="kv-value">{{ object.allowed_source_categories }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Multiclassing allowed</div>
+    <div class="kv-value">{{ object.allow_multiclassing }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Feats allowed</div>
+    <div class="kv-value">{{ object.allow_feats }}</div>
+  </div>
+</div>
 {% if can_view_hidden_guidance %}
-  <h2>Hidden AI Guidance</h2>
-  <p>{{ object.hidden_ai_guidance }}</p>
+<h2>Hidden AI Guidance</h2>
+<p>{{ object.hidden_ai_guidance }}</p>
 {% endif %}
-<p><a href="{% url 'rulesets:edit' object.pk %}">Edit ruleset</a></p>
+<p class="action-links"><a href="{% url 'rulesets:edit' object.pk %}">Edit ruleset</a></p>
 {% endblock %}

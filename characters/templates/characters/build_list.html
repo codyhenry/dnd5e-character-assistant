@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Character Builds</h1>
-<p>
-  <a href="{% url 'characters:create' %}">Create build</a> |
+<p class="action-links">
+  <a href="{% url 'characters:create' %}">Create build</a>
   <a href="{% url 'characters:npc_create' %}">Create NPC</a>
 </p>
-<ul>
+<ul class="record-list">
   {% for build in object_list %}
-    <li><a href="{% url 'characters:detail' build.pk %}">{{ build.name }}</a> ({{ build.build_type }})</li>
+  <li>
+    <a href="{% url 'characters:detail' build.pk %}" class="record-link">
+      <span class="record-title">{{ build.name }}</span>
+      <span class="record-meta">{{ build.build_type }} • Created {{ build.created_at|date:"M j, Y" }}</span>
+    </a>
+  </li>
   {% empty %}
-    <li>No builds yet.</li>
+  <li class="record-empty">No builds yet.</li>
   {% endfor %}
 </ul>
 {% endblock %}

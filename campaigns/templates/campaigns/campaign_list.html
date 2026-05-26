@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Your Campaigns</h1>
-<p><a href="{% url 'campaigns:create' %}">Create campaign</a></p>
-<ul>
+<p class="action-links"><a href="{% url 'campaigns:create' %}">Create campaign</a></p>
+<ul class="record-list">
   {% for campaign in object_list %}
-    <li><a href="{% url 'campaigns:detail' campaign.pk %}">{{ campaign.name }}</a></li>
+  <li>
+    <a href="{% url 'campaigns:detail' campaign.pk %}" class="record-link">
+      <span class="record-title">{{ campaign.name }}</span>
+      <span class="record-meta record-meta-rows">
+        <span
+          class="{% if campaign.status == 'ACTIVE' %}status-badge status-badge-active{% else %}status-badge status-badge-ended{% endif %}">
+          {{ campaign.get_status_display }}
+        </span>
+        <span>Created {{ campaign.created_at|date:"M j, Y" }}</span>
+      </span>
+    </a>
+  </li>
   {% empty %}
-    <li>No campaigns yet.</li>
+  <li class="record-empty">No campaigns yet.</li>
   {% endfor %}
 </ul>
 {% endblock %}

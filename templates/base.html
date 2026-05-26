@@ -1,21 +1,410 @@
+{% load static %}
 <!doctype html>
-<html>
-  <head>
-    <title>DND5e Character Assistant</title>
-  </head>
-  <body>
-    <nav>
-      {% if user.is_authenticated %}
-        <a href="{% url 'campaigns:list' %}">Campaigns</a> |
-        <a href="{% url 'characters:player_dashboard' %}">Player Dashboard</a> |
-        <a href="{% url 'characters:list' %}">Builds</a> |
-        <a href="{% url 'ai_builder:prompt' %}">AI Builder</a> |
-        <a href="{% url 'logout' %}">Logout</a>
-      {% else %}
-        <a href="{% url 'login' %}">Login</a>
-      {% endif %}
-    </nav>
-    <hr>
-    {% block content %}{% endblock %}
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DND5e Character Assistant</title>
+  <link rel="icon" type="image/svg+xml" href="{% static 'favicon.svg' %}">
+  <link rel="shortcut icon" href="{% static 'favicon.svg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Cinzel", "serif"],
+            body: ["Crimson Text", "serif"]
+          },
+          colors: {
+            tavern: {
+              ember: "#7a2016",
+              wine: "#4a1612",
+              cinder: "#231817",
+              smoke: "#13100f"
+            },
+            parchment: {
+              light: "#efe0bf",
+              base: "#dfc89b",
+              dark: "#b89663"
+            },
+            brass: {
+              bright: "#e1be63",
+              base: "#b68637",
+              dark: "#7a561d"
+            }
+          },
+          boxShadow: {
+            sigil: "0 0 0 1px rgba(225, 190, 99, 0.35), 0 20px 55px -24px rgba(0, 0, 0, 0.9)"
+          },
+          backgroundImage: {
+            vellum: "radial-gradient(circle at 20% 10%, rgba(239, 224, 191, 0.15), transparent 32%), radial-gradient(circle at 80% 0%, rgba(225, 190, 99, 0.15), transparent 30%), linear-gradient(135deg, #1a1211 0%, #231817 42%, #311514 100%)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Shared heading treatment for all templates that extend base. */
+    main section h1,
+    main section h2,
+    main section h3 {
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.03em;
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 0.85rem;
+      color: #e1be63;
+      text-wrap: balance;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    }
+
+    main section h1 {
+      font-size: clamp(1.7rem, 1.2rem + 1.5vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid rgba(182, 134, 55, 0.65);
+      margin-bottom: 1rem;
+    }
+
+    main section h1::before {
+      content: "◆ ";
+      color: #b68637;
+      font-size: 0.85em;
+      vertical-align: 0.08em;
+    }
+
+    main section h2 {
+      font-size: clamp(1.2rem, 1rem + 0.7vw, 1.55rem);
+      font-weight: 700;
+      padding-left: 0.55rem;
+      border-left: 3px solid rgba(182, 134, 55, 0.65);
+      color: #dfc89b;
+      margin-top: 1.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    main section h3 {
+      font-size: clamp(1.02rem, 0.94rem + 0.28vw, 1.15rem);
+      font-weight: 700;
+      color: #efe0bf;
+      margin-top: 0.9rem;
+      margin-bottom: 0.55rem;
+    }
+
+    main section .action-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    main section .action-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.42rem 0.88rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(122, 86, 29, 0.9);
+      background: linear-gradient(180deg, rgba(225, 190, 99, 0.92), rgba(182, 134, 55, 0.92));
+      color: #13100f;
+      font-family: "Cinzel", serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 0 0 1px rgba(225, 190, 99, 0.2), 0 10px 24px -14px rgba(0, 0, 0, 0.85);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    }
+
+    main section .action-links a:hover,
+    main section .action-links a:focus-visible {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+      box-shadow: 0 0 0 1px rgba(225, 190, 99, 0.35), 0 14px 26px -14px rgba(0, 0, 0, 0.95);
+      outline: none;
+    }
+
+    main section .record-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.72rem;
+    }
+
+    main section .record-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(182, 134, 55, 0.45);
+      background: rgba(35, 24, 23, 0.68);
+      padding: 0.72rem 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 0 0 1px rgba(225, 190, 99, 0.12), 0 12px 28px -18px rgba(0, 0, 0, 0.92);
+      transition: transform 0.16s ease, border-color 0.16s ease, background-color 0.16s ease;
+    }
+
+    main section .record-link:hover,
+    main section .record-link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(182, 134, 55, 0.82);
+      background: rgba(74, 22, 18, 0.78);
+      outline: none;
+    }
+
+    main section .record-title {
+      font-family: "Cinzel", serif;
+      font-size: 1.08rem;
+      color: #efe0bf;
+    }
+
+    main section .record-link:hover .record-title,
+    main section .record-link:focus-visible .record-title {
+      color: #e1be63;
+    }
+
+    main section .record-meta {
+      flex-shrink: 0;
+      text-align: right;
+      color: rgba(223, 200, 155, 0.92);
+      font-size: 0.9rem;
+    }
+
+    main section .record-meta-rows {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.28rem;
+    }
+
+    main section .record-empty {
+      border-radius: 0.65rem;
+      border: 1px solid rgba(122, 86, 29, 0.65);
+      background: rgba(35, 24, 23, 0.45);
+      padding: 0.72rem 0.95rem;
+      color: #dfc89b;
+    }
+
+    main section .status-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      padding: 0.2rem 0.58rem;
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    main section .status-badge-active {
+      background: rgba(86, 131, 78, 0.25);
+      border-color: rgba(133, 192, 119, 0.6);
+      color: #d8f1c8;
+    }
+
+    main section .status-badge-ended {
+      background: rgba(122, 32, 22, 0.32);
+      border-color: rgba(214, 120, 105, 0.6);
+      color: #ffd2ca;
+    }
+
+    main section .kv-list {
+      display: grid;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    main section .kv-row {
+      display: grid;
+      grid-template-columns: minmax(12rem, 16rem) 1fr;
+      gap: 0.75rem;
+      align-items: start;
+      padding: 0.5rem 0.65rem;
+      border-radius: 0.55rem;
+      background: rgba(35, 24, 23, 0.42);
+      border: 1px solid rgba(122, 86, 29, 0.38);
+    }
+
+    main section .kv-key {
+      font-family: "Cinzel", serif;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #dfc89b;
+    }
+
+    main section .kv-value {
+      color: #efe0bf;
+      word-break: break-word;
+    }
+
+    @media (max-width: 640px) {
+      main section .kv-row {
+        grid-template-columns: 1fr;
+        gap: 0.32rem;
+      }
+    }
+
+    /* Unified input styling so form controls match the tavern/parchment theme. */
+    main section input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+    main section textarea,
+    main section select {
+      width: 100%;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(122, 86, 29, 0.82);
+      background-color: rgba(223, 200, 155, 0.92);
+      color: #231817;
+      font-size: 1rem;
+      line-height: 1.4;
+      padding: 0.52rem 0.7rem;
+      outline: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    main section input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="file"])::placeholder,
+    main section textarea::placeholder {
+      color: rgba(35, 24, 23, 0.62);
+    }
+
+    main section input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+    main section textarea:focus,
+    main section select:focus {
+      border-color: rgba(182, 134, 55, 0.95);
+      background-color: rgba(239, 224, 191, 0.96);
+      box-shadow: 0 0 0 2px rgba(182, 134, 55, 0.3);
+    }
+
+    /* Default form button style for templates using plain submit controls. */
+    main section form button:not([class]),
+    main section form input[type="submit"]:not([class]) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.35rem;
+      padding: 0.45rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(122, 86, 29, 0.9);
+      background: linear-gradient(180deg, rgba(225, 190, 99, 0.95), rgba(182, 134, 55, 0.94));
+      color: #13100f;
+      font-family: "Cinzel", serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 0 0 1px rgba(225, 190, 99, 0.2), 0 12px 24px -14px rgba(0, 0, 0, 0.92);
+      transition: transform 0.16s ease, filter 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    main section form button:not([class]):hover,
+    main section form button:not([class]):focus-visible,
+    main section form input[type="submit"]:not([class]):hover,
+    main section form input[type="submit"]:not([class]):focus-visible {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 0 0 1px rgba(225, 190, 99, 0.35), 0 14px 28px -15px rgba(0, 0, 0, 0.96);
+      outline: none;
+    }
+
+    main section form button:not([class]):active,
+    main section form input[type="submit"]:not([class]):active {
+      transform: translateY(0);
+    }
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body class="min-h-screen bg-vellum font-body text-parchment-light antialiased">
+  <div class="pointer-events-none fixed inset-0 opacity-30" aria-hidden="true">
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(0,0,0,0.25),transparent_45%),radial-gradient(circle_at_90%_90%,rgba(0,0,0,0.4),transparent_45%)]">
+    </div>
+  </div>
+
+  <header class="relative z-10 border-b border-brass-dark/60 bg-tavern-smoke/70 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <a href="{% if user.is_authenticated %}{% url 'campaigns:list' %}{% else %}{% url 'login' %}{% endif %}"
+          class="group inline-flex items-center gap-3">
+          <span
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brass-base/80 bg-tavern-wine/70 text-xl text-brass-bright shadow-sigil transition group-hover:scale-105 group-hover:rotate-3">d20</span>
+          <span>
+            <span class="block font-display text-lg uppercase tracking-[0.2em] text-brass-bright">DND5e</span>
+            <span class="block text-sm italic text-parchment-base">Character Assistant</span>
+          </span>
+        </a>
+
+        {% if user.is_authenticated %}
+        <div class="flex items-center gap-2">
+          <div
+            class="rounded-full border border-brass-base/50 bg-tavern-cinder/80 px-4 py-1 text-sm text-parchment-base shadow-sigil">
+            Adventurer: <span class="font-semibold text-parchment-light">{{ user.username }}</span>
+          </div>
+          <a href="{% url 'logout' %}"
+            class="rounded-full border border-brass-dark/80 bg-brass-base/90 px-4 py-2 text-sm font-bold tracking-wide text-tavern-smoke transition hover:-translate-y-0.5 hover:bg-brass-bright">Logout</a>
+        </div>
+        {% endif %}
+      </div>
+
+      <nav class="flex flex-wrap gap-2">
+        {% if user.is_authenticated %}
+        <a href="{% url 'campaigns:list' %}"
+          class="rounded-full border border-brass-base/70 bg-tavern-wine/80 px-4 py-2 text-sm font-semibold tracking-wide text-parchment-light transition hover:-translate-y-0.5 hover:bg-tavern-ember">Campaigns</a>
+        <a href="{% url 'characters:player_dashboard' %}"
+          class="rounded-full border border-brass-base/70 bg-tavern-wine/80 px-4 py-2 text-sm font-semibold tracking-wide text-parchment-light transition hover:-translate-y-0.5 hover:bg-tavern-ember">Player
+          Dashboard</a>
+        <a href="{% url 'characters:list' %}"
+          class="rounded-full border border-brass-base/70 bg-tavern-wine/80 px-4 py-2 text-sm font-semibold tracking-wide text-parchment-light transition hover:-translate-y-0.5 hover:bg-tavern-ember">Builds</a>
+        <a href="{% url 'ai_builder:prompt' %}"
+          class="rounded-full border border-brass-base/70 bg-tavern-wine/80 px-4 py-2 text-sm font-semibold tracking-wide text-parchment-light transition hover:-translate-y-0.5 hover:bg-tavern-ember">AI
+          Builder</a>
+        {% else %}
+        <a href="{% url 'login' %}"
+          class="rounded-full border border-brass-base/80 bg-tavern-wine/90 px-4 py-2 text-sm font-semibold tracking-wide text-parchment-light transition hover:-translate-y-0.5 hover:bg-tavern-ember">Login</a>
+        <a href="{% url 'signup' %}"
+          class="rounded-full border border-brass-dark/80 bg-brass-base/90 px-4 py-2 text-sm font-bold tracking-wide text-tavern-smoke transition hover:-translate-y-0.5 hover:bg-brass-bright">Sign
+          Up</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10 mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+    {% if messages %}
+    <div class="mb-6 space-y-3">
+      {% for message in messages %}
+      <div class="rounded-xl border border-brass-base/40 bg-tavern-cinder/75 px-4 py-3 text-sm shadow-sigil">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <section class="rounded-2xl border border-brass-base/50 bg-tavern-smoke/75 p-6 shadow-sigil sm:p-8">
+      {% block content %}{% endblock %}
+    </section>
+  </main>
+</body>
+
 </html>

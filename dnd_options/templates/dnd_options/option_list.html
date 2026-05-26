@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>D&D Options</h1>
-<p><a href="{% url 'dnd_options:create' %}">Create option</a></p>
+<p class="action-links"><a href="{% url 'dnd_options:create' %}">Create option</a></p>
 <ul>
   {% for option in object_list %}
-    <li>{{ option.name }} ({{ option.option_type }})</li>
+  <li>{{ option.name }} ({{ option.option_type }})</li>
   {% empty %}
-    <li>No options yet.</li>
+  <li>No options yet.</li>
   {% endfor %}
 </ul>
 {% endblock %}

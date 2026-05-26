@@ -2,19 +2,29 @@
 {% block content %}
 <h1>Player Dashboard</h1>
 <h2>Campaigns</h2>
-<ul>
+<ul class="record-list">
   {% for campaign in campaigns %}
-    <li><a href="{% url 'campaigns:detail' campaign.pk %}">{{ campaign.name }}</a></li>
+  <li>
+    <a href="{% url 'campaigns:detail' campaign.pk %}" class="record-link">
+      <span class="record-title">{{ campaign.name }}</span>
+      <span class="record-meta">Created {{ campaign.created_at|date:"M j, Y" }}</span>
+    </a>
+  </li>
   {% empty %}
-    <li>No campaigns</li>
+  <li class="record-empty">No campaigns</li>
   {% endfor %}
 </ul>
 <h2>Saved Builds</h2>
-<ul>
+<ul class="record-list">
   {% for build in builds %}
-    <li><a href="{% url 'characters:detail' build.pk %}">{{ build.name }}</a></li>
+  <li>
+    <a href="{% url 'characters:detail' build.pk %}" class="record-link">
+      <span class="record-title">{{ build.name }}</span>
+      <span class="record-meta">{{ build.build_type }} • Created {{ build.created_at|date:"M j, Y" }}</span>
+    </a>
+  </li>
   {% empty %}
-    <li>No builds</li>
+  <li class="record-empty">No builds</li>
   {% endfor %}
 </ul>
 {% endblock %}

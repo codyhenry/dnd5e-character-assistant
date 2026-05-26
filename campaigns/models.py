@@ -3,9 +3,16 @@ from django.db import models
 
 
 class Campaign(models.Model):
+    class Status(models.TextChoices):
+        ACTIVE = 'ACTIVE', 'Active'
+        ENDED = 'ENDED', 'Ended'
+
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='owned_campaigns')
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='owned_campaigns')
+    status = models.CharField(
+        max_length=10, choices=Status.choices, default=Status.ACTIVE)
     active_ruleset = models.ForeignKey(
         'rulesets.Ruleset',
         on_delete=models.SET_NULL,
@@ -13,7 +20,8 @@ class Campaign(models.Model):
         blank=True,
         related_name='active_for_campaigns',
     )
-    members = models.ManyToManyField(settings.AUTH_USER_MODEL, through='CampaignMembership', related_name='campaigns')
+    members = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, through='CampaignMembership', related_name='campaigns')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -29,8 +37,10 @@ class CampaignMembership(models.Model):
         DM = 'DM', 'Dungeon Master'
         PLAYER = 'PLAYER', 'Player'
 
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='campaign_memberships')
-    campaign = models.ForeignKey(Campaign, on_delete=models.CASCADE, related_name='memberships')
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='campaign_memberships')
+    campaign = models.ForeignKey(
+        Campaign, on_delete=models.CASCADE, related_name='memberships')
     role = models.CharField(max_length=10, choices=Role.choices)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

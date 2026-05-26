@@ -13,13 +13,19 @@ class CharacterPermissionsAndValidationTests(TestCase):
     def setUp(self):
         user_model = get_user_model()
         self.dm = user_model.objects.create_user(username='dm', password='pw')
-        self.player_one = user_model.objects.create_user(username='player1', password='pw')
-        self.player_two = user_model.objects.create_user(username='player2', password='pw')
+        self.player_one = user_model.objects.create_user(
+            username='player1', password='pw')
+        self.player_two = user_model.objects.create_user(
+            username='player2', password='pw')
 
-        self.campaign = Campaign.objects.create(name='Test Campaign', description='desc', owner=self.dm)
-        CampaignMembership.objects.create(user=self.dm, campaign=self.campaign, role=CampaignMembership.Role.DM)
-        CampaignMembership.objects.create(user=self.player_one, campaign=self.campaign, role=CampaignMembership.Role.PLAYER)
-        CampaignMembership.objects.create(user=self.player_two, campaign=self.campaign, role=CampaignMembership.Role.PLAYER)
+        self.campaign = Campaign.objects.create(
+            name='Test Campaign', description='desc', owner=self.dm)
+        CampaignMembership.objects.create(
+            user=self.dm, campaign=self.campaign, role=CampaignMembership.Role.DM)
+        CampaignMembership.objects.create(
+            user=self.player_one, campaign=self.campaign, role=CampaignMembership.Role.PLAYER)
+        CampaignMembership.objects.create(
+            user=self.player_two, campaign=self.campaign, role=CampaignMembership.Role.PLAYER)
 
         self.ruleset = Ruleset.objects.create(
             campaign=self.campaign,
@@ -56,9 +62,12 @@ class CharacterPermissionsAndValidationTests(TestCase):
             owner=owner,
             campaign=self.campaign,
             name=kwargs.pop('name', 'Player Build'),
-            build_type=kwargs.pop('build_type', CharacterBuild.BuildType.PLAYER_CHARACTER),
-            visibility=kwargs.pop('visibility', CharacterBuild.Visibility.PRIVATE),
-            character_level=kwargs.pop('character_level', self.ruleset.required_character_level),
+            build_type=kwargs.pop(
+                'build_type', CharacterBuild.BuildType.PLAYER_CHARACTER),
+            visibility=kwargs.pop(
+                'visibility', CharacterBuild.Visibility.PRIVATE),
+            character_level=kwargs.pop(
+                'character_level', self.ruleset.required_character_level),
             species_option=kwargs.pop('species_option', self.species_option),
             **kwargs,
         )
@@ -74,7 +83,8 @@ class CharacterPermissionsAndValidationTests(TestCase):
         private_build = self._create_player_build(owner=self.player_one)
 
         self.client.login(username='player2', password='pw')
-        response = self.client.get(reverse('characters:detail', args=[private_build.pk]))
+        response = self.client.get(
+            reverse('characters:detail', args=[private_build.pk]))
 
         self.assertEqual(response.status_code, 403)
 
@@ -82,8 +92,10 @@ class CharacterPermissionsAndValidationTests(TestCase):
         private_build = self._create_player_build(owner=self.player_one)
 
         self.client.login(username='dm', password='pw')
-        detail_response = self.client.get(reverse('characters:detail', args=[private_build.pk]))
-        list_response = self.client.get(reverse('characters:dm_all_builds', args=[self.campaign.pk]))
+        detail_response = self.client.get(
+            reverse('characters:detail', args=[private_build.pk]))
+        list_response = self.client.get(
+            reverse('characters:dm_all_builds', args=[self.campaign.pk]))
 
         self.assertEqual(detail_response.status_code, 200)
         self.assertContains(list_response, private_build.name)
@@ -94,17 +106,20 @@ class CharacterPermissionsAndValidationTests(TestCase):
         result = validate_character_build(build, self.ruleset)
 
         self.assertFalse(result.is_valid)
-        self.assertIn('Character level must match the ruleset required level.', result.errors)
+        self.assertIn(
+            'Character level must match the ruleset required level.', result.errors)
 
     def test_player_build_fails_validation_for_banned_option(self):
         build = self._create_player_build()
         build.selected_feats.add(self.banned_feat)
-        RulesetBannedOption.objects.create(ruleset=self.ruleset, banned_option=self.banned_feat)
+        RulesetBannedOption.objects.create(
+            ruleset=self.ruleset, banned_option=self.banned_feat)
 
         result = validate_character_build(build, self.ruleset)
 
         self.assertFalse(result.is_valid)
-        self.assertIn('Character build includes one or more banned options.', result.errors)
+        self.assertIn(
+            'Character build includes one or more banned options.', result.errors)
 
     def test_player_build_fails_validation_for_disallowed_source_category(self):
         build = self._create_player_build()
@@ -113,7 +128,8 @@ class CharacterPermissionsAndValidationTests(TestCase):
         result = validate_character_build(build, self.ruleset)
 
         self.assertFalse(result.is_valid)
-        self.assertIn('Character build includes options from disallowed source categories.', result.errors)
+        self.assertIn(
+            'Character build includes options from disallowed source categories.', result.errors)
 
     def test_player_build_fails_validation_when_multiclassing_disallowed(self):
         build = self._create_player_build()
@@ -127,7 +143,8 @@ class CharacterPermissionsAndValidationTests(TestCase):
         result = validate_character_build(build, self.ruleset)
 
         self.assertFalse(result.is_valid)
-        self.assertIn('Multiclassing is not allowed by this ruleset.', result.errors)
+        self.assertIn(
+            'Multiclassing is not allowed by this ruleset.', result.errors)
 
     def test_player_build_fails_validation_when_feats_disabled(self):
         build = self._create_player_build()
@@ -145,9 +162,53 @@ class CharacterPermissionsAndValidationTests(TestCase):
             character_level=99,
         )
         build.selected_feats.add(self.banned_feat)
-        RulesetBannedOption.objects.create(ruleset=self.ruleset, banned_option=self.banned_feat)
+        RulesetBannedOption.objects.create(
+            ruleset=self.ruleset, banned_option=self.banned_feat)
 
         result = validate_character_build(build, self.ruleset)
 
         self.assertTrue(result.is_valid)
         self.assertEqual(result.errors, [])
+
+
+class CampaignDropdownFilteringTests(TestCase):
+    def setUp(self):
+        user_model = get_user_model()
+        self.user = user_model.objects.create_user(
+            username='builder', password='pw')
+
+        self.active_campaign = Campaign.objects.create(
+            name='Active Campaign',
+            description='active',
+            owner=self.user,
+            status=Campaign.Status.ACTIVE,
+        )
+        self.ended_campaign = Campaign.objects.create(
+            name='Ended Campaign',
+            description='ended',
+            owner=self.user,
+            status=Campaign.Status.ENDED,
+        )
+
+        CampaignMembership.objects.create(
+            user=self.user, campaign=self.active_campaign, role=CampaignMembership.Role.DM)
+        CampaignMembership.objects.create(
+            user=self.user, campaign=self.ended_campaign, role=CampaignMembership.Role.DM)
+
+        self.client.login(username='builder', password='pw')
+
+    def test_build_create_dropdown_shows_only_active_campaigns(self):
+        response = self.client.get(reverse('characters:create'))
+
+        self.assertEqual(response.status_code, 200)
+        queryset = response.context['form'].fields['campaign'].queryset
+        self.assertIn(self.active_campaign, queryset)
+        self.assertNotIn(self.ended_campaign, queryset)
+
+    def test_npc_create_dropdown_shows_only_active_campaigns(self):
+        response = self.client.get(reverse('characters:npc_create'))
+
+        self.assertEqual(response.status_code, 200)
+        queryset = response.context['form'].fields['campaign'].queryset
+        self.assertIn(self.active_campaign, queryset)
+        self.assertNotIn(self.ended_campaign, queryset)

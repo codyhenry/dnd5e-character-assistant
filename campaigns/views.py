@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import CreateView, DetailView, ListView, TemplateView, UpdateView
 
-from .forms import CampaignForm, CampaignMembershipForm
+from .forms import CampaignCreateForm, CampaignMembershipForm, CampaignUpdateForm
 from .models import Campaign
 from .permissions import is_campaign_dm, is_campaign_member
 from .services import add_or_update_membership
@@ -30,7 +30,8 @@ class DMCampaignDashboardView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['campaign'] = self.campaign
-        context['builds'] = self.campaign.character_builds.select_related('owner')
+        context['builds'] = self.campaign.character_builds.select_related(
+            'owner')
         return context
 
 
@@ -47,13 +48,14 @@ class CampaignDetailView(LoginRequiredMixin, DetailView):
 
 class CampaignCreateView(LoginRequiredMixin, CreateView):
     model = Campaign
-    form_class = CampaignForm
+    form_class = CampaignCreateForm
     template_name = 'campaigns/campaign_form.html'
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
         response = super().form_valid(form)
-        add_or_update_membership(campaign=self.object, user=self.request.user, role='DM')
+        add_or_update_membership(campaign=self.object,
+                                 user=self.request.user, role='DM')
         return response
 
     def get_success_url(self):
@@ -62,7 +64,7 @@ class CampaignCreateView(LoginRequiredMixin, CreateView):
 
 class CampaignUpdateView(LoginRequiredMixin, UpdateView):
     model = Campaign
-    form_class = CampaignForm
+    form_class = CampaignUpdateForm
     template_name = 'campaigns/campaign_form.html'
 
     def dispatch(self, request, *args, **kwargs):
