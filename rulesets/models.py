@@ -9,6 +9,7 @@ from .validators import validate_starting_gold_formula
 class Ruleset(models.Model):
     if TYPE_CHECKING:
         campaign: Any
+        banned_options: Any
         _previous_ruleset_snapshot: dict[str, Any] | None
 
     campaign = models.ForeignKey(
