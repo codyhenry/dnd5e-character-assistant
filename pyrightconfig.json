@@ -1,0 +1,19 @@
+{
+  "typeCheckingMode": "basic",
+  "exclude": [
+    "**/node_modules",
+    "**/migrations",
+    "**/__pycache__",
+    ".venv",
+    "venv",
+    ".venv-1",
+    "**/.*"
+  ],
+  "reportAttributeAccessIssue": "none",
+  "reportOptionalMemberAccess": "warning",
+  "reportOptionalSubscript": "warning",
+  "reportOptionalCall": "warning",
+  "reportOptionalIterable": "warning",
+  "reportOptionalContextManager": "warning",
+  "reportOptionalOperand": "warning"
+}
