@@ -3,7 +3,70 @@
 <h1>Ruleset</h1>
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
+  {% if form.non_field_errors %}
+  <div class="form-errors">{{ form.non_field_errors }}</div>
+  {% endif %}
+
+  {{ form.starting_gold_formula }}
+
+  <p>
+    {{ form.name.label_tag }}
+    {{ form.name }}
+    {{ form.name.errors }}
+  </p>
+
+  <p>
+    {{ form.required_character_level.label_tag }}
+    {{ form.required_character_level }}
+    {{ form.required_character_level.errors }}
+  </p>
+
+  <fieldset>
+    <legend>Starting Gold</legend>
+    <p>
+      {{ form.starting_gold_base.label_tag }}
+      {{ form.starting_gold_base }}
+      {% if form.starting_gold_base.help_text %}<small>{{ form.starting_gold_base.help_text }}</small>{% endif %}
+      {{ form.starting_gold_base.errors }}
+    </p>
+    <p>
+      {{ form.starting_gold_dice_count.label_tag }}
+      {{ form.starting_gold_dice_count }}
+      {% if form.starting_gold_dice_count.help_text %}<small>{{ form.starting_gold_dice_count.help_text }}</small>{%
+      endif %}
+      {{ form.starting_gold_dice_count.errors }}
+    </p>
+    <p>
+      {{ form.starting_gold_dice_type.label_tag }}
+      {{ form.starting_gold_dice_type }}
+      {{ form.starting_gold_dice_type.errors }}
+    </p>
+  </fieldset>
+
+  <p>
+    {{ form.allowed_source_categories.label_tag }}
+    {{ form.allowed_source_categories }}
+    {{ form.allowed_source_categories.errors }}
+  </p>
+
+  <p>
+    {{ form.allow_multiclassing.label_tag }}
+    {{ form.allow_multiclassing }}
+    {{ form.allow_multiclassing.errors }}
+  </p>
+
+  <p>
+    {{ form.allow_feats.label_tag }}
+    {{ form.allow_feats }}
+    {{ form.allow_feats.errors }}
+  </p>
+
+  <p>
+    {{ form.hidden_ai_guidance.label_tag }}
+    {{ form.hidden_ai_guidance }}
+    {{ form.hidden_ai_guidance.errors }}
+  </p>
+
   <button type="submit">Save</button>
 </form>
 {% endblock %}
