@@ -27,6 +27,78 @@
     <div class="kv-value">{{ object.allow_feats }}</div>
   </div>
 </div>
+
+<h2>Option Restrictions</h2>
+{% if option_restrictions %}
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Option</th>
+      <th>Notes</th>
+      {% if can_manage_option_restrictions %}<th>Actions</th>{% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for restriction in option_restrictions %}
+    <tr>
+      <td>
+        {% if restriction.banned_option %}
+          {{ restriction.banned_option.get_option_type_display }}
+        {% elif restriction.banned_character_build %}
+          Character Build
+        {% else %}
+          Unknown
+        {% endif %}
+      </td>
+      <td>
+        {% if restriction.banned_option %}
+          {{ restriction.banned_option.name }}
+        {% elif restriction.banned_character_build %}
+          {{ restriction.banned_character_build.name }}
+        {% else %}
+          Unspecified
+        {% endif %}
+      </td>
+      <td>{{ restriction.notes|default:'—' }}</td>
+      {% if can_manage_option_restrictions %}
+      <td>
+        <form method="post" action="{% url 'rulesets:remove_option_restriction' object.pk restriction.pk %}">
+          {% csrf_token %}
+          <button type="submit">Remove</button>
+        </form>
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No explicit option restrictions have been added to this ruleset.</p>
+{% endif %}
+
+{% if can_manage_option_restrictions %}
+<h3>Add Option Restriction</h3>
+<form method="post" action="{% url 'rulesets:add_option_restriction' object.pk %}">
+  {% csrf_token %}
+  {% if option_restriction_form.non_field_errors %}
+  <div class="form-errors">{{ option_restriction_form.non_field_errors }}</div>
+  {% endif %}
+  <p>
+    {{ option_restriction_form.banned_option.label_tag }}
+    {{ option_restriction_form.banned_option }}
+    {% if option_restriction_form.banned_option.help_text %}<small>{{ option_restriction_form.banned_option.help_text }}</small>{% endif %}
+    {{ option_restriction_form.banned_option.errors }}
+  </p>
+  <p>
+    {{ option_restriction_form.notes.label_tag }}
+    {{ option_restriction_form.notes }}
+    {{ option_restriction_form.notes.errors }}
+  </p>
+  <button type="submit">Add restriction</button>
+</form>
+{% endif %}
+
 {% if can_view_hidden_guidance %}
 <h2>Hidden AI Guidance</h2>
 <p>{{ object.hidden_ai_guidance }}</p>
