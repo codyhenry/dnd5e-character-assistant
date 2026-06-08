@@ -1,0 +1,5662 @@
+[
+  {
+    "name": "Minor Illusion",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:minor-illusion",
+    "source_category": "official",
+    "summary": "An illusion cantrip that creates a sound or static image inside a 5-foot cube.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "cantrip",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 0,
+      "spell_level_label": "cantrip",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "30 feet",
+        "type": "distance",
+        "distance": 30,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "S",
+          "M"
+        ],
+        "verbal": false,
+        "somatic": true,
+        "material": true,
+        "material_description": "a bit of fleece",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a bit of fleece",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a bit of fleece)"
+        }
+      ],
+      "duration": {
+        "raw": "1 minute",
+        "type": "timed",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Minor illusion",
+          "effect": "Creates one sound or one image of an object within a 5-foot cube.",
+          "raw_text": "Sound or image illusion."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [
+        {
+          "type": "investigation_reveal",
+          "description": "Physical interaction reveals image as illusion; action Investigation check against spell save DC can reveal it.",
+          "raw_text": "Investigation reveals illusion."
+        }
+      ],
+      "raw_effect_text": "An illusion cantrip that creates a sound or static image inside a 5-foot cube.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.86,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires sound/image mode, 5-foot cube limits, physical interaction transparency, and Investigation reveal."
+    ]
+  },
+  {
+    "name": "Color Spray",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:color-spray",
+    "source_category": "official",
+    "summary": "A cone of dazzling light blinds creatures based on ascending current hit points.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "blinded": 0.8
+    },
+    "mechanical_tags": [
+      "1st_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 1,
+      "spell_level_label": "1st_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Self (15-foot cone)",
+        "type": "self",
+        "distance": 15,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a pinch of powder or sand that is colored red, yellow, and blue",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a pinch of powder or sand that is colored red, yellow, and blue",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a pinch of powder or sand that is colored red, yellow, and blue)"
+        }
+      ],
+      "duration": {
+        "raw": "1 round",
+        "type": "timed",
+        "amount": 1,
+        "unit": "round",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "cone",
+        "size": 15,
+        "unit": "feet",
+        "raw": "15 feet cone"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "blinded"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [
+        {
+          "name": "Color spray blindness",
+          "effect": "Roll 6d10; creatures in ascending current HP order are blinded until end of caster's next turn.",
+          "target": "creatures in cone",
+          "duration": "1 round",
+          "raw_text": "Dazzling array of flashing colored light."
+        }
+      ],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [
+        {
+          "scales_by": "spell_slot_level",
+          "levels": [],
+          "effect": "Scales by 2d10 extra HP pool for higher-level slots unless otherwise noted.",
+          "raw_text": "Higher-level casting scaling."
+        }
+      ],
+      "resource_interactions": [],
+      "restrictions": [],
+      "raw_effect_text": "A cone of dazzling light blinds creatures based on ascending current hit points.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.78,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires HP pool ordering, blindness duration, and upcast HP pool."
+    ]
+  },
+  {
+    "name": "Disguise Self",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:disguise-self",
+    "source_category": "official",
+    "summary": "An illusion spell that changes the caster's visual appearance and clothing/equipment within size constraints.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "1st_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 1,
+      "spell_level_label": "1st_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Self",
+        "type": "self",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "1 hour",
+        "type": "timed",
+        "amount": 1,
+        "unit": "hour",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Illusory disguise",
+          "effect": "Caster appears different, including clothing/armor/weapons/equipment, but physical inspection can reveal mismatch.",
+          "target": "self",
+          "raw_text": "Make yourself look different."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [
+        {
+          "type": "form_limits",
+          "description": "Cannot change body type; height can seem 1 foot shorter or taller; apparent changes do not hold up to physical inspection.",
+          "raw_text": "Physical inspection reveals illusion."
+        }
+      ],
+      "raw_effect_text": "An illusion spell that changes the caster's visual appearance and clothing/equipment within size constraints.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.84,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires appearance override, size/body limits, physical inspection, and Investigation check."
+    ]
+  },
+  {
+    "name": "Distort Value",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:distort-value",
+    "source_category": "official",
+    "summary": "An illusion spell that makes an object appear twice or half its value.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "1st_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 1,
+      "spell_level_label": "1st_level",
+      "school": "illusion",
+      "source_book": "Acquisitions Incorporated",
+      "casting_time": {
+        "raw": "1 minute",
+        "action_type": "minute",
+        "amount": 1,
+        "unit": "minute",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Touch",
+        "type": "touch",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V"
+        ],
+        "verbal": true,
+        "somatic": false,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        }
+      ],
+      "duration": {
+        "raw": "8 hours",
+        "type": "timed",
+        "amount": 8,
+        "unit": "hour",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Distorted value",
+          "effect": "Object appears more or less valuable; appraisals can be fooled unless creature inspects and succeeds on Investigation.",
+          "target": "object",
+          "raw_text": "Object appears more/less valuable."
+        }
+      ],
+      "scaling": [
+        {
+          "scales_by": "spell_slot_level",
+          "levels": [],
+          "effect": "Scales by additional object size/targets per source for higher-level slots unless otherwise noted.",
+          "raw_text": "Higher-level casting scaling."
+        }
+      ],
+      "resource_interactions": [],
+      "restrictions": [
+        {
+          "type": "object_limit",
+          "description": "Object must be no larger than 1 foot on a side? exact AI text should be checked for object size and upcast limits.",
+          "raw_text": "Distort object value."
+        }
+      ],
+      "raw_effect_text": "An illusion spell that makes an object appear twice or half its value.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.72,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires exact object size/upcast verification, appraisal handling, and Investigation reveal."
+    ]
+  },
+  {
+    "name": "Illusory Script",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:illusory-script",
+    "source_category": "official",
+    "summary": "A ritual illusion spell that hides or disguises writing for chosen readers for 10 days.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "1st_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 1,
+      "spell_level_label": "1st_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 minute",
+        "action_type": "minute",
+        "amount": 1,
+        "unit": "minute",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Touch",
+        "type": "touch",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "S",
+          "M"
+        ],
+        "verbal": false,
+        "somatic": true,
+        "material": true,
+        "material_description": "a lead-based ink worth at least 10 gp, which the spell consumes",
+        "material_consumed": true,
+        "material_cost_gp": 10.0
+      },
+      "component_requirements": [
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a lead-based ink worth at least 10 gp, which the spell consumes",
+          "material_consumed": true,
+          "material_cost_gp": 10.0,
+          "raw_text": "M (a lead-based ink worth at least 10 gp, which the spell consumes)"
+        }
+      ],
+      "duration": {
+        "raw": "10 days",
+        "type": "timed",
+        "amount": 10,
+        "unit": "day",
+        "concentration": false
+      },
+      "ritual": true,
+      "concentration": false,
+      "classes": [
+        "Bard",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Hidden script",
+          "effect": "Chosen creatures read true message; others see unintelligible/magical script or different message.",
+          "target": "writing",
+          "raw_text": "Write on parchment or suitable material."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "material_component_consumed",
+          "description": "Consumes lead-based ink worth at least 10 gp.",
+          "raw_text": "M ink consumed."
+        }
+      ],
+      "restrictions": [
+        {
+          "type": "truesight_dispel",
+          "description": "True Seeing reveals hidden message; Dispel Magic erases illusion and original script.",
+          "raw_text": "True seeing reveals."
+        }
+      ],
+      "raw_effect_text": "A ritual illusion spell that hides or disguises writing for chosen readers for 10 days.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.8,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires reader permissions, false-message text, ritual flag, consumed ink, and True Seeing/Dispel interactions."
+    ]
+  },
+  {
+    "name": "Silent Image",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:silent-image",
+    "source_category": "official",
+    "summary": "A concentration spell that creates a movable visual image inside a 15-foot cube.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "1st_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 1,
+      "spell_level_label": "1st_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "60 feet",
+        "type": "distance",
+        "distance": 60,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a bit of fleece",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a bit of fleece",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a bit of fleece)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 10 minutes",
+        "type": "concentration",
+        "amount": 10,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "cube",
+        "size": 15,
+        "unit": "feet",
+        "raw": "15 feet cube"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Silent image",
+          "effect": "Creates visual image only; caster can use action to move it within range.",
+          "raw_text": "Purely visual illusion."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 10 minutes.",
+          "raw_text": "Duration: Concentration, up to 10 minutes"
+        }
+      ],
+      "restrictions": [
+        {
+          "type": "investigation_reveal",
+          "description": "Physical interaction reveals illusion; action Investigation check can reveal it.",
+          "raw_text": "Investigation reveal."
+        }
+      ],
+      "raw_effect_text": "A concentration spell that creates a movable visual image inside a 15-foot cube.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.82,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires image dimensions, action movement, no sound/smell/temperature, physical interaction, Investigation reveal."
+    ]
+  },
+  {
+    "name": "Unearthly Chorus (UA)",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:unearthly-chorus",
+    "source_category": "unearthed_arcana",
+    "summary": "A UA illusion spell that creates supernatural music/chorus to influence social checks or auditory perception.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "1st_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 1,
+      "spell_level_label": "1st_level",
+      "school": "illusion",
+      "source_book": "Unearthed Arcana 36 - Starter Spells",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Self",
+        "type": "self",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V"
+        ],
+        "verbal": true,
+        "somatic": false,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 10 minutes",
+        "type": "concentration",
+        "amount": 10,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Unearthly chorus",
+          "effect": "UA auditory/social illusion effect; exact mechanics require source review.",
+          "target": "self/audible area",
+          "raw_text": "UA chorus effect."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 10 minutes.",
+          "raw_text": "Duration: Concentration, up to 10 minutes"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A UA illusion spell that creates supernatural music/chorus to influence social checks or auditory perception.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.45,
+    "needs_review": true,
+    "review_reasons": [
+      "Unearthed Arcana content requires source/category review.",
+      "Requires exact social/auditory effect verification."
+    ]
+  },
+  {
+    "name": "Blur",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:blur",
+    "source_category": "official",
+    "summary": "A concentration self-illusion that makes attacks against the caster have disadvantage.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Self",
+        "type": "self",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V"
+        ],
+        "verbal": true,
+        "somatic": false,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [
+        {
+          "name": "Blurred form",
+          "effect": "Attack rolls against caster have disadvantage unless attacker does not rely on sight or can see through illusions.",
+          "target": "self",
+          "duration": "Concentration",
+          "raw_text": "Body becomes blurred."
+        }
+      ],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration self-illusion that makes attacks against the caster have disadvantage.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.86,
+    "needs_review": false,
+    "review_reasons": []
+  },
+  {
+    "name": "Invisibility",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:invisibility",
+    "source_category": "official",
+    "summary": "A concentration spell that makes a creature invisible until it attacks or casts a spell.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8,
+      "stealth advantage": 0.8
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Touch",
+        "type": "touch",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "an eyelash encased in gum arabic",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "an eyelash encased in gum arabic",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (an eyelash encased in gum arabic)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 hour",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "hour",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "invisible"
+      ],
+      "conditions_removed": [],
+      "buffs": [
+        {
+          "name": "Invisibility",
+          "effect": "Target and carried/worn items become invisible until spell ends, target attacks, or target casts a spell.",
+          "target": "creature",
+          "duration": "Concentration, up to 1 hour",
+          "raw_text": "Creature becomes invisible."
+        }
+      ],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [
+        {
+          "scales_by": "spell_slot_level",
+          "levels": [],
+          "effect": "Scales by one additional target for higher-level slots unless otherwise noted.",
+          "raw_text": "Higher-level casting scaling."
+        }
+      ],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 hour.",
+          "raw_text": "Duration: Concentration, up to 1 hour"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration spell that makes a creature invisible until it attacks or casts a spell.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.86,
+    "needs_review": false,
+    "review_reasons": []
+  },
+  {
+    "name": "Magic Mouth",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:magic-mouth",
+    "source_category": "official",
+    "summary": "A ritual illusion spell that stores a triggered audible message in an object.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 minute",
+        "action_type": "minute",
+        "amount": 1,
+        "unit": "minute",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "30 feet",
+        "type": "distance",
+        "distance": 30,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes",
+        "material_consumed": true,
+        "material_cost_gp": 10.0
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes",
+          "material_consumed": true,
+          "material_cost_gp": 10.0,
+          "raw_text": "M (a small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes)"
+        }
+      ],
+      "duration": {
+        "raw": "Until dispelled",
+        "type": "until_dispelled",
+        "amount": null,
+        "unit": null,
+        "concentration": false
+      },
+      "ritual": true,
+      "concentration": false,
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Triggered message",
+          "effect": "Object delivers a message of up to 25 words when a visual/audible trigger occurs within 30 feet.",
+          "target": "object",
+          "raw_text": "Mouth appears and speaks."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "material_component_consumed",
+          "description": "Consumes jade dust worth at least 10 gp.",
+          "raw_text": "M consumed."
+        }
+      ],
+      "restrictions": [
+        {
+          "type": "trigger",
+          "description": "Trigger can be general or detailed but must be based on visual or audible conditions within 30 feet.",
+          "raw_text": "Trigger conditions."
+        }
+      ],
+      "raw_effect_text": "A ritual illusion spell that stores a triggered audible message in an object.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.8,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires object binding, trigger parser, 25-word message, visual/audible trigger detection, and consumed material."
+    ]
+  },
+  {
+    "name": "Mirror Image",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:mirror-image",
+    "source_category": "official",
+    "summary": "Creates three illusory duplicates that can cause attacks to hit duplicates instead of the caster.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Self",
+        "type": "self",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "1 minute",
+        "type": "timed",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [
+        {
+          "name": "Mirror duplicates",
+          "effect": "Three duplicates alter attack targeting rolls; duplicates have AC based on Dexterity and vanish when hit.",
+          "target": "self",
+          "duration": "1 minute",
+          "raw_text": "Three illusory duplicates appear."
+        }
+      ],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [
+        {
+          "type": "sight_exception",
+          "description": "Unaffected by attackers that cannot see, rely on senses other than sight, or perceive illusions as false.",
+          "raw_text": "Attacker exceptions."
+        }
+      ],
+      "raw_effect_text": "Creates three illusory duplicates that can cause attacks to hit duplicates instead of the caster.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.82,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires duplicate count, d20 redirection table, duplicate AC, hit removal, and sight/illusion exceptions."
+    ]
+  },
+  {
+    "name": "Nathair's Mischief",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:nathairs-mischief",
+    "source_category": "official",
+    "summary": "A concentration illusion creates a cube of fey/draconic mischief with random effects each turn.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8,
+      "blinded": 0.8
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Fizban's Treasury of Dragons",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "60 feet",
+        "type": "distance",
+        "distance": 60,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "S",
+          "M"
+        ],
+        "verbal": false,
+        "somatic": true,
+        "material": true,
+        "material_description": "a piece of crust from an apple pie",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a piece of crust from an apple pie",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a piece of crust from an apple pie)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "varies",
+        "effect_on_success": "Varies by random effect.",
+        "effect_on_failure": "Varies by random effect."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "cube",
+        "size": 20,
+        "unit": "feet",
+        "raw": "20 feet cube"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "charmed",
+        "blinded"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Mischief cube",
+          "effect": "Roll on random table each turn for smell/charm/blind/difficult terrain effects; cube can move.",
+          "target": "area",
+          "raw_text": "Fey and draconic magic fills cube."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration illusion creates a cube of fey/draconic mischief with random effects each turn.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.72,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires random d4 effect table, moving cube, different saves/effects, and concentration."
+    ]
+  },
+  {
+    "name": "Nathair's Mischief (UA)",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:nathairs-mischief-ua",
+    "source_category": "unearthed_arcana",
+    "summary": "A UA version of Nathair's Mischief requiring comparison against the published spell.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Unearthed Arcana 78 - Draconic Options",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "60 feet",
+        "type": "distance",
+        "distance": 60,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "S",
+          "M"
+        ],
+        "verbal": false,
+        "somatic": true,
+        "material": true,
+        "material_description": "a piece of crust from an apple pie",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a piece of crust from an apple pie",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a piece of crust from an apple pie)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "cube",
+        "size": 20,
+        "unit": "feet",
+        "raw": "20 feet cube"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A UA version of Nathair's Mischief requiring comparison against the published spell.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.45,
+    "needs_review": true,
+    "review_reasons": [
+      "Unearthed Arcana content requires source/category review.",
+      "Compare with published Nathair's Mischief before enabling both."
+    ]
+  },
+  {
+    "name": "Nystul's Magic Aura",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:nystuls-magic-aura",
+    "source_category": "official",
+    "summary": "An illusion spell that changes how a target appears to divination magic and magical detection.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Touch",
+        "type": "touch",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a small square of silk",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a small square of silk",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a small square of silk)"
+        }
+      ],
+      "duration": {
+        "raw": "24 hours",
+        "type": "timed",
+        "amount": 24,
+        "unit": "hour",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "False aura/mask",
+          "effect": "Can alter magical aura or creature type appearance to divination spells and magical sensors.",
+          "target": "object or willing creature",
+          "raw_text": "False magical aura."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [
+        {
+          "type": "permanence",
+          "description": "Casting on same target daily for 30 days makes effect last until dispelled.",
+          "raw_text": "30-day permanence."
+        }
+      ],
+      "raw_effect_text": "An illusion spell that changes how a target appears to divination magic and magical detection.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.78,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires divination/magical sensor override, aura/type masking modes, target validation, and 30-day permanence tracking."
+    ]
+  },
+  {
+    "name": "Phantasmal Force",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:phantasmal-force",
+    "source_category": "official",
+    "summary": "A concentration spell that implants a damaging or convincing phantasm in a creature's mind after an Intelligence save.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "60 feet",
+        "type": "distance",
+        "distance": 60,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a bit of fleece",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a bit of fleece",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a bit of fleece)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [
+        {
+          "damage_type": "psychic",
+          "dice": "1d6",
+          "flat_bonus": null,
+          "condition": "phantasm logically damages target each round",
+          "scales": false,
+          "raw_text": "1d6 psychic damage on phantasm logically damages target each round."
+        }
+      ],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "intelligence",
+        "effect_on_success": "Target is unaffected.",
+        "effect_on_failure": "Target perceives phantasm as real."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [
+        {
+          "name": "Phantasm",
+          "effect": "Target rationalizes illogical outcomes and may take psychic damage if phantasm can logically deal damage.",
+          "target": "one creature",
+          "duration": "Concentration",
+          "raw_text": "Phantasm takes root."
+        }
+      ],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration spell that implants a damaging or convincing phantasm in a creature's mind after an Intelligence save.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.76,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires subjective illusion adjudication, Investigation action to end, target rationalization, and conditional psychic damage."
+    ]
+  },
+  {
+    "name": "Shadow Blade",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:shadow-blade",
+    "source_category": "official",
+    "summary": "A bonus-action concentration spell that creates a throwable finesse light shadow sword dealing psychic damage.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Xanathar's Guide to Everything",
+      "casting_time": {
+        "raw": "1 bonus action",
+        "action_type": "bonus_action",
+        "amount": 1,
+        "unit": "bonus action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Self",
+        "type": "self",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [
+        {
+          "damage_type": "psychic",
+          "dice": "2d8",
+          "flat_bonus": null,
+          "condition": "hit with shadow blade weapon attack",
+          "scales": true,
+          "raw_text": "2d8 psychic damage on hit with shadow blade weapon attack."
+        }
+      ],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Shadow blade",
+          "effect": "Creates magic sword with finesse, light, thrown properties; advantage in dim light or darkness.",
+          "target": "self",
+          "raw_text": "Sword of solidified gloom."
+        }
+      ],
+      "scaling": [
+        {
+          "scales_by": "spell_slot_level",
+          "levels": [
+            3,
+            5,
+            7
+          ],
+          "effect": "Damage increases at 3rd/4th, 5th/6th, and 7th+ slot levels.",
+          "raw_text": "Nonlinear slot scaling."
+        }
+      ],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A bonus-action concentration spell that creates a throwable finesse light shadow sword dealing psychic damage.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.82,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires created weapon state, thrown/return behavior, dim-light advantage, concentration, and nonlinear scaling."
+    ]
+  },
+  {
+    "name": "Silence",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:silence",
+    "source_category": "official",
+    "summary": "A ritual concentration spell that creates a 20-foot-radius sphere where sound is blocked and thunder damage is negated.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "2nd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 2,
+      "spell_level_label": "2nd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "120 feet",
+        "type": "distance",
+        "distance": 120,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 10 minutes",
+        "type": "concentration",
+        "amount": 10,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": true,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Ranger"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "sphere",
+        "size": 20,
+        "unit": "feet radius",
+        "raw": "20 feet radius sphere"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "deafened"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Silence zone",
+          "effect": "No sound can be created in or pass through area; creatures are deafened inside and verbal components are impossible; thunder damage immunity in area.",
+          "target": "area",
+          "raw_text": "Sphere of silence."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 10 minutes.",
+          "raw_text": "Duration: Concentration, up to 10 minutes"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A ritual concentration spell that creates a 20-foot-radius sphere where sound is blocked and thunder damage is negated.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.86,
+    "needs_review": false,
+    "review_reasons": []
+  },
+  {
+    "name": "Fear",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:fear",
+    "source_category": "official",
+    "summary": "A concentration cone forces Wisdom saves; failed targets drop held items and flee while frightened.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8,
+      "frightened": 0.8
+    },
+    "mechanical_tags": [
+      "3rd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 3,
+      "spell_level_label": "3rd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Self (30-foot cone)",
+        "type": "self",
+        "distance": 30,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a white feather or the heart of a hen",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a white feather or the heart of a hen",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a white feather or the heart of a hen)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "wisdom",
+        "effect_on_success": "Not frightened.",
+        "effect_on_failure": "Drops held items and becomes frightened; must Dash away while line of sight persists."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "cone",
+        "size": 30,
+        "unit": "feet",
+        "raw": "30 feet cone"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "frightened"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration cone forces Wisdom saves; failed targets drop held items and flee while frightened.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.86,
+    "needs_review": false,
+    "review_reasons": []
+  },
+  {
+    "name": "Hypnotic Pattern",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:hypnotic-pattern",
+    "source_category": "official",
+    "summary": "A concentration cube of twisting colors charms and incapacitates failed-save creatures until damaged or shaken awake.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "3rd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 3,
+      "spell_level_label": "3rd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "120 feet",
+        "type": "distance",
+        "distance": 120,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "S",
+          "M"
+        ],
+        "verbal": false,
+        "somatic": true,
+        "material": true,
+        "material_description": "a glowing stick of incense or a crystal vial filled with phosphorescent material",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a glowing stick of incense or a crystal vial filled with phosphorescent material",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a glowing stick of incense or a crystal vial filled with phosphorescent material)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "wisdom",
+        "effect_on_success": "Not affected.",
+        "effect_on_failure": "Charmed and incapacitated with speed 0."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "cube",
+        "size": 30,
+        "unit": "feet",
+        "raw": "30 feet cube"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "charmed",
+        "incapacitated"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [
+        {
+          "name": "Hypnotized",
+          "effect": "Affected creature is charmed, incapacitated, and speed 0 until damage or another creature uses action to shake it awake.",
+          "target": "failed-save creatures",
+          "duration": "Concentration",
+          "raw_text": "Pattern entrances creatures."
+        }
+      ],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration cube of twisting colors charms and incapacitates failed-save creatures until damaged or shaken awake.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.86,
+    "needs_review": false,
+    "review_reasons": []
+  },
+  {
+    "name": "Invisibility To Cameras (UA)",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:invisibility-to-cameras",
+    "source_category": "unearthed_arcana",
+    "summary": "A UA technomagic illusion that makes targets invisible to cameras and electronic sensors.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "3rd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 3,
+      "spell_level_label": "3rd_level",
+      "school": "illusion",
+      "source_book": "Unearthed Arcana 7 - Modern Magic",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "10 feet",
+        "type": "distance",
+        "distance": 10,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a scrap of black paper",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a scrap of black paper",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a scrap of black paper)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Camera invisibility",
+          "effect": "Targets become invisible to camera-like sensors; exact device rules require source review.",
+          "target": "creatures",
+          "raw_text": "Technomagic camera invisibility."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A UA technomagic illusion that makes targets invisible to cameras and electronic sensors.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.45,
+    "needs_review": true,
+    "review_reasons": [
+      "Unearthed Arcana content requires source/category review.",
+      "Requires modern device/sensor support and exact source verification."
+    ]
+  },
+  {
+    "name": "Major Image",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:major-image",
+    "source_category": "official",
+    "summary": "A concentration spell creates a visual, auditory, olfactory, and thermal illusion in a 20-foot cube.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "3rd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 3,
+      "spell_level_label": "3rd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "120 feet",
+        "type": "distance",
+        "distance": 120,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a bit of fleece",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a bit of fleece",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a bit of fleece)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 10 minutes",
+        "type": "concentration",
+        "amount": 10,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "cube",
+        "size": 20,
+        "unit": "feet",
+        "raw": "20 feet cube"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Major image",
+          "effect": "Creates image with sound, smell, and temperature; caster can move it with action.",
+          "raw_text": "Convincing sensory illusion."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [
+        {
+          "scales_by": "spell_slot_level",
+          "levels": [
+            6
+          ],
+          "effect": "With 6th-level or higher slot, lasts until dispelled without concentration.",
+          "raw_text": "Permanent until dispelled at higher slot."
+        }
+      ],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 10 minutes.",
+          "raw_text": "Duration: Concentration, up to 10 minutes"
+        }
+      ],
+      "restrictions": [
+        {
+          "type": "investigation_reveal",
+          "description": "Physical interaction reveals illusion; action Investigation check can reveal it.",
+          "raw_text": "Investigation reveal."
+        }
+      ],
+      "raw_effect_text": "A concentration spell creates a visual, auditory, olfactory, and thermal illusion in a 20-foot cube.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.8,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires multisensory image, action movement, physical reveal, Investigation reveal, and 6th-level permanence behavior."
+    ]
+  },
+  {
+    "name": "Phantom Steed",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:phantom-steed",
+    "source_category": "official",
+    "summary": "A ritual illusion creates a quasi-real Large horselike mount with high speed.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "3rd_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 3,
+      "spell_level_label": "3rd_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 minute",
+        "action_type": "minute",
+        "amount": 1,
+        "unit": "minute",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "30 feet",
+        "type": "distance",
+        "distance": 30,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "1 hour",
+        "type": "timed",
+        "amount": 1,
+        "unit": "hour",
+        "concentration": false
+      },
+      "ritual": true,
+      "concentration": false,
+      "classes": [
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Phantom steed",
+          "effect": "Creates Large quasi-real mount with AC/speed and mount-like travel behavior.",
+          "raw_text": "Large quasi-real horselike creature."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [
+        {
+          "type": "ending",
+          "description": "Spell ends if caster uses action to dismiss or steed takes damage; steed fades over 1 minute.",
+          "raw_text": "Fades gradually."
+        }
+      ],
+      "raw_effect_text": "A ritual illusion creates a quasi-real Large horselike mount with high speed.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.78,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires ritual flag, mount entity, speed/stat handling, damage ending, and fade behavior."
+    ]
+  },
+  {
+    "name": "Greater Invisibility",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:greater-invisibility",
+    "source_category": "official",
+    "summary": "A concentration spell that makes a creature invisible without ending on attacks or spellcasting.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8,
+      "stealth advantage": 0.8
+    },
+    "mechanical_tags": [
+      "4th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 4,
+      "spell_level_label": "4th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Touch",
+        "type": "touch",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "invisible"
+      ],
+      "conditions_removed": [],
+      "buffs": [
+        {
+          "name": "Greater invisibility",
+          "effect": "Target and worn/carried items are invisible for duration.",
+          "target": "creature",
+          "duration": "Concentration",
+          "raw_text": "Creature becomes invisible."
+        }
+      ],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration spell that makes a creature invisible without ending on attacks or spellcasting.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.88,
+    "needs_review": false,
+    "review_reasons": []
+  },
+  {
+    "name": "Hallucinatory Terrain",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:hallucinatory-terrain",
+    "source_category": "official",
+    "summary": "An illusion spell that makes natural terrain in a large cube look, sound, and smell like another sort of terrain.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "4th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 4,
+      "spell_level_label": "4th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "10 minutes",
+        "action_type": "minute",
+        "amount": 10,
+        "unit": "minutes",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "300 feet",
+        "type": "distance",
+        "distance": 300,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a stone, a twig, and a bit of green plant",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a stone, a twig, and a bit of green plant",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a stone, a twig, and a bit of green plant)"
+        }
+      ],
+      "duration": {
+        "raw": "24 hours",
+        "type": "timed",
+        "amount": 24,
+        "unit": "hour",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Bard",
+        "Druid",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "cube",
+        "size": 150,
+        "unit": "feet",
+        "raw": "150 feet cube"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Terrain illusion",
+          "effect": "Natural terrain appears as another natural terrain type; tactile characteristics are unchanged.",
+          "target": "terrain area",
+          "raw_text": "Terrain appears different."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [],
+      "raw_effect_text": "An illusion spell that makes natural terrain in a large cube look, sound, and smell like another sort of terrain.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.78,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires terrain appearance override, natural terrain restriction, tactile mismatch, Investigation reveal, and large-area state."
+    ]
+  },
+  {
+    "name": "Phantasmal Killer",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:phantasmal-killer",
+    "source_category": "official",
+    "summary": "A concentration spell manifests a target's worst fear, frightening it and dealing psychic damage on failed Wisdom saves.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8,
+      "frightened": 0.8
+    },
+    "mechanical_tags": [
+      "4th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 4,
+      "spell_level_label": "4th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "120 feet",
+        "type": "distance",
+        "distance": 120,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [
+        {
+          "damage_type": "psychic",
+          "dice": "4d10",
+          "flat_bonus": null,
+          "condition": "failed Wisdom saving throw at end of target's turns",
+          "scales": true,
+          "raw_text": "4d10 psychic damage on failed Wisdom saving throw at end of target's turns."
+        }
+      ],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "wisdom",
+        "effect_on_success": "Spell ends or no initial effect.",
+        "effect_on_failure": "Target is frightened and takes psychic damage on failed repeat saves."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "frightened"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [
+        {
+          "scales_by": "spell_slot_level",
+          "levels": [],
+          "effect": "Scales by 1d10 for higher-level slots unless otherwise noted.",
+          "raw_text": "Higher-level casting scaling."
+        }
+      ],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration spell manifests a target's worst fear, frightening it and dealing psychic damage on failed Wisdom saves.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.8,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires fear illusion, frightened state, repeat saves, end-turn damage, and upcast damage."
+    ]
+  },
+  {
+    "name": "Creation",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:creation",
+    "source_category": "official",
+    "summary": "Creates a nonliving object of vegetable, mineral, or precious material with duration based on material.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "5th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 5,
+      "spell_level_label": "5th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 minute",
+        "action_type": "minute",
+        "amount": 1,
+        "unit": "minute",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "30 feet",
+        "type": "distance",
+        "distance": 30,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a tiny piece of matter of the same type of the item you plan to create",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a tiny piece of matter of the same type of the item you plan to create",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a tiny piece of matter of the same type of the item you plan to create)"
+        }
+      ],
+      "duration": {
+        "raw": "Special",
+        "type": "other",
+        "amount": null,
+        "unit": null,
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Created object",
+          "effect": "Creates nonliving object no larger than 5-foot cube; duration depends on material.",
+          "raw_text": "Object formed from shadow material."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [
+        {
+          "scales_by": "spell_slot_level",
+          "levels": [],
+          "effect": "Cube size increases by 5 feet for each slot level above 5th.",
+          "raw_text": "Size scaling."
+        }
+      ],
+      "resource_interactions": [],
+      "restrictions": [
+        {
+          "type": "material_duration",
+          "description": "Duration varies by material: vegetable matter, stone/crystal, precious metals, gems, adamantine/mithral.",
+          "raw_text": "Material duration table."
+        },
+        {
+          "type": "no_spell_component",
+          "description": "Using created material as another spell's material component causes that spell to fail.",
+          "raw_text": "Cannot use as spell component."
+        }
+      ],
+      "raw_effect_text": "Creates a nonliving object of vegetable, mineral, or precious material with duration based on material.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.76,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires object/material choice, duration table, object size scaling, and material component restriction."
+    ]
+  },
+  {
+    "name": "Dream",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:dream",
+    "source_category": "official",
+    "summary": "A long-range illusion spell that shapes a sleeping creature's dreams or creates a nightmare dealing psychic damage.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "5th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 5,
+      "spell_level_label": "5th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 minute",
+        "action_type": "minute",
+        "amount": 1,
+        "unit": "minute",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Special",
+        "type": "other",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird",
+        "material_consumed": false,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird",
+          "material_consumed": false,
+          "material_cost_gp": null,
+          "raw_text": "M (a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird)"
+        }
+      ],
+      "duration": {
+        "raw": "8 hours",
+        "type": "timed",
+        "amount": 8,
+        "unit": "hour",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Bard",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [
+        {
+          "damage_type": "psychic",
+          "dice": "3d6",
+          "flat_bonus": null,
+          "condition": "failed Wisdom save against nightmare",
+          "scales": false,
+          "raw_text": "3d6 psychic damage on failed Wisdom save against nightmare."
+        }
+      ],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "wisdom",
+        "effect_on_success": "Nightmare fails and messenger is repelled.",
+        "effect_on_failure": "Nightmare prevents rest benefit and deals psychic damage."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Dream messenger",
+          "effect": "Messenger enters target's dream, can converse, or appear monstrous to induce nightmare.",
+          "target": "sleeping creature",
+          "raw_text": "Shape dreams."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [
+        {
+          "type": "target_limits",
+          "description": "Target must be known to caster and on same plane; elves/trance may be immune depending on sleep rules.",
+          "raw_text": "Known creature on same plane."
+        }
+      ],
+      "raw_effect_text": "A long-range illusion spell that shapes a sleeping creature's dreams or creates a nightmare dealing psychic damage.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.76,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires sleeping/known target, same-plane validation, messenger choice, conversation/nightmare mode, rest denial, and Wisdom save."
+    ]
+  },
+  {
+    "name": "Mislead",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:mislead",
+    "source_category": "official",
+    "summary": "A concentration spell that makes the caster invisible and creates an illusory double the caster can sense through and move.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8,
+      "stealth advantage": 0.8
+    },
+    "mechanical_tags": [
+      "5th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 5,
+      "spell_level_label": "5th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Self",
+        "type": "self",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "S"
+        ],
+        "verbal": false,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 hour",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "hour",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "invisible"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Illusory double",
+          "effect": "Double appears where caster stands; caster can use action to move it and can see/hear through it.",
+          "raw_text": "Illusory double."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Remote senses",
+          "effect": "Caster can switch between own senses and double's senses as bonus action, becoming blind/deaf to own surroundings while using double.",
+          "target": "self/double",
+          "raw_text": "See and hear through double."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 hour.",
+          "raw_text": "Duration: Concentration, up to 1 hour"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration spell that makes the caster invisible and creates an illusory double the caster can sense through and move.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.78,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires caster invisibility, double entity, action movement, remote senses, bonus-action sense switching, and concentration."
+    ]
+  },
+  {
+    "name": "Seeming",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:seeming",
+    "source_category": "official",
+    "summary": "An illusion spell that changes the appearance of any number of creatures within range.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "5th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 5,
+      "spell_level_label": "5th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "30 feet",
+        "type": "distance",
+        "distance": 30,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "8 hours",
+        "type": "timed",
+        "amount": 8,
+        "unit": "hour",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "charisma",
+        "effect_on_success": "Unwilling target is unaffected.",
+        "effect_on_failure": "Unwilling target's appearance is disguised."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Mass disguise",
+          "effect": "Changes appearance of any number of creatures within range, including clothing/equipment; physical inspection can reveal mismatch.",
+          "target": "creatures",
+          "raw_text": "Disguise many creatures."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [],
+      "raw_effect_text": "An illusion spell that changes the appearance of any number of creatures within range.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.8,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires multi-target appearance overrides, unwilling Charisma save, physical inspection, Investigation reveal, and equipment appearance."
+    ]
+  },
+  {
+    "name": "Mental Prison",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:mental-prison",
+    "source_category": "official",
+    "summary": "A concentration spell traps a creature in an illusory prison, dealing psychic damage initially and if it moves through the illusion.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8,
+      "restrained": 0.8
+    },
+    "mechanical_tags": [
+      "6th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 6,
+      "spell_level_label": "6th_level",
+      "school": "illusion",
+      "source_book": "Xanathar's Guide to Everything",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "60 feet",
+        "type": "distance",
+        "distance": 60,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "S"
+        ],
+        "verbal": false,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [
+        {
+          "damage_type": "psychic",
+          "dice": "5d10 initial + 10d10 escape",
+          "flat_bonus": null,
+          "condition": "failed Intelligence saving throw",
+          "scales": false,
+          "raw_text": "5d10 initial + 10d10 escape psychic damage on failed Intelligence saving throw."
+        }
+      ],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "intelligence",
+        "effect_on_success": "Half initial psychic damage and no prison.",
+        "effect_on_failure": "Full initial damage and target is restrained in illusory prison."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "restrained"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration spell traps a creature in an illusory prison, dealing psychic damage initially and if it moves through the illusion.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.78,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires illusion prison, restrained state, escape/move/reach-through trigger, heavy psychic damage, and concentration."
+    ]
+  },
+  {
+    "name": "Programmed Illusion",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:programmed-illusion",
+    "source_category": "official",
+    "summary": "Creates a triggered scripted illusion that activates when specified conditions are met.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "6th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 6,
+      "spell_level_label": "6th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "120 feet",
+        "type": "distance",
+        "distance": 120,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a bit of fleece and jade dust worth at least 25 gp",
+        "material_consumed": false,
+        "material_cost_gp": 25.0
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a bit of fleece and jade dust worth at least 25 gp",
+          "material_consumed": false,
+          "material_cost_gp": 25.0,
+          "raw_text": "M (a bit of fleece and jade dust worth at least 25 gp)"
+        }
+      ],
+      "duration": {
+        "raw": "Until dispelled",
+        "type": "until_dispelled",
+        "amount": null,
+        "unit": null,
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "cube",
+        "size": 30,
+        "unit": "feet",
+        "raw": "30 feet cube"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Programmed illusion",
+          "effect": "Creates image/sound/smell/thermal illusion that activates on specified trigger and follows a script for up to 5 minutes.",
+          "raw_text": "Triggered illusion."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [
+        {
+          "type": "trigger_script",
+          "description": "Trigger can be general or detailed based on visual/audible conditions; script can last up to 5 minutes.",
+          "raw_text": "Programmed trigger/script."
+        }
+      ],
+      "raw_effect_text": "Creates a triggered scripted illusion that activates when specified conditions are met.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.76,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires trigger parser, script playback, illusion sensory details, Investigation reveal, and persistent until-dispelled state."
+    ]
+  },
+  {
+    "name": "Mirage Arcane",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:mirage-arcane",
+    "source_category": "official",
+    "summary": "A large-scale illusion reshapes the appearance and tactile experience of terrain for 10 days.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "7th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 7,
+      "spell_level_label": "7th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "10 minutes",
+        "action_type": "minute",
+        "amount": 10,
+        "unit": "minutes",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Sight",
+        "type": "sight",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "10 days",
+        "type": "timed",
+        "amount": 10,
+        "unit": "day",
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Bard",
+        "Druid",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "square",
+        "size": 1,
+        "unit": "mile",
+        "raw": "1 mile square"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [
+        {
+          "name": "Illusory terrain transformation",
+          "effect": "Terrain looks, sounds, smells, and feels like another terrain; can alter structures or add/remove terrain features within limits.",
+          "target": "terrain area",
+          "raw_text": "Terrain transformed by illusion."
+        }
+      ],
+      "scaling": [],
+      "resource_interactions": [],
+      "restrictions": [],
+      "raw_effect_text": "A large-scale illusion reshapes the appearance and tactile experience of terrain for 10 days.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.72,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires mile-scale terrain state, tactile illusion, structure/terrain feature handling, truesight interaction, and long duration."
+    ]
+  },
+  {
+    "name": "Project Image",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:project-image",
+    "source_category": "official",
+    "summary": "Creates an illusory duplicate of the caster at any known location on the same plane.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8
+    },
+    "mechanical_tags": [
+      "7th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 7,
+      "spell_level_label": "7th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "500 miles",
+        "type": "distance",
+        "distance": 500,
+        "unit": "mile"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "a small replica of you made from materials worth at least 5 gp",
+        "material_consumed": false,
+        "material_cost_gp": 5.0
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "a small replica of you made from materials worth at least 5 gp",
+          "material_consumed": false,
+          "material_cost_gp": 5.0,
+          "raw_text": "M (a small replica of you made from materials worth at least 5 gp)"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 day",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "day",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Projected image",
+          "effect": "Illusory copy of caster can move, speak, gesture, and be sensed through; physical interaction reveals it.",
+          "raw_text": "Illusory copy."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 day.",
+          "raw_text": "Duration: Concentration, up to 1 day"
+        }
+      ],
+      "restrictions": [
+        {
+          "type": "same_plane_known_location",
+          "description": "Destination must be a location within range the caster has seen before and on same plane.",
+          "raw_text": "Known location same plane."
+        }
+      ],
+      "raw_effect_text": "Creates an illusory duplicate of the caster at any known location on the same plane.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.76,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires same-plane known-location validation, duplicate control, remote senses, damage/interaction reveal, and long concentration."
+    ]
+  },
+  {
+    "name": "Simulacrum",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:simulacrum",
+    "source_category": "official",
+    "summary": "Creates an illusory duplicate of a beast or humanoid with half hit points and limited recovery/spell slot rules.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0
+    },
+    "mechanical_tags": [
+      "7th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 7,
+      "spell_level_label": "7th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "12 hours",
+        "action_type": "hour",
+        "amount": 12,
+        "unit": "hours",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "Touch",
+        "type": "touch",
+        "distance": null,
+        "unit": null
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S",
+          "M"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "material_description": "snow or ice in quantities sufficient to made a life-size copy of the duplicated creature; some hair, fingernail clippings, or other piece of that creature's body placed inside the snow or ice; and powdered ruby worth 1,500 gp, sprinkled over the duplicate and consumed by the spell",
+        "material_consumed": true,
+        "material_cost_gp": 1500.0
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        },
+        {
+          "component_code": "M",
+          "component_name": "Material",
+          "material_description": "snow or ice in quantities sufficient to made a life-size copy of the duplicated creature; some hair, fingernail clippings, or other piece of that creature's body placed inside the snow or ice; and powdered ruby worth 1,500 gp, sprinkled over the duplicate and consumed by the spell",
+          "material_consumed": true,
+          "material_cost_gp": 1500.0,
+          "raw_text": "M (snow or ice in quantities sufficient to made a life-size copy of the duplicated creature; some hair, fingernail clippings, or other piece of that creature's body placed inside the snow or ice; and powdered ruby worth 1,500 gp, sprinkled over the duplicate and consumed by the spell)"
+        }
+      ],
+      "duration": {
+        "raw": "Until dispelled",
+        "type": "until_dispelled",
+        "amount": null,
+        "unit": null,
+        "concentration": false
+      },
+      "ritual": false,
+      "concentration": false,
+      "classes": [
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [],
+      "healing": [],
+      "saving_throw": {
+        "has_save": false,
+        "ability": null,
+        "effect_on_success": null,
+        "effect_on_failure": null
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Simulacrum",
+          "effect": "Creates a partially real duplicate of one beast or humanoid with game statistics, half HP, no learning/leveling, and no regained spell slots.",
+          "raw_text": "Illusory duplicate."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "material_component_consumed",
+          "description": "Consumes powdered ruby worth 1,500 gp plus body sample/snow or ice.",
+          "raw_text": "Ruby consumed."
+        }
+      ],
+      "restrictions": [
+        {
+          "type": "duplicate_limits",
+          "description": "If spell is cast again, existing duplicate is destroyed; duplicate cannot regain expended spell slots and repair costs 100 gp per HP.",
+          "raw_text": "Simulacrum limits."
+        }
+      ],
+      "raw_effect_text": "Creates an illusory duplicate of a beast or humanoid with half hit points and limited recovery/spell slot rules.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.72,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires full creature duplicate modeling, stat copying, half HP, spell slot recovery restriction, repair cost, one-simulacrum limit, and consumed ruby."
+    ]
+  },
+  {
+    "name": "Illusory Dragon",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:illusory-dragon",
+    "source_category": "official",
+    "summary": "Creates a terrifying quasi-real dragon illusion that frightens and breathes damaging energy.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8,
+      "frightened": 0.8
+    },
+    "mechanical_tags": [
+      "8th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 8,
+      "spell_level_label": "8th_level",
+      "school": "illusion",
+      "source_book": "Xanathar's Guide to Everything",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "120 feet",
+        "type": "distance",
+        "distance": 120,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "S"
+        ],
+        "verbal": false,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [
+        {
+          "damage_type": "chosen_draconic_damage",
+          "dice": "7d6",
+          "flat_bonus": null,
+          "condition": "failed Intelligence saving throw against breath",
+          "scales": false,
+          "raw_text": "7d6 chosen_draconic_damage damage on failed Intelligence saving throw against breath."
+        }
+      ],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "wisdom/intelligence",
+        "effect_on_success": "Varies by fear or breath save.",
+        "effect_on_failure": "Frightened or psychic/energy damage depending on effect."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": false,
+        "shape": null,
+        "size": null,
+        "unit": null,
+        "raw": null
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "frightened"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [
+        {
+          "name": "Illusory dragon",
+          "effect": "Large dragon illusion with chosen damage type; can move and use breath effect as bonus action.",
+          "raw_text": "Illusory dragon."
+        }
+      ],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "Creates a terrifying quasi-real dragon illusion that frightens and breathes damaging energy.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.72,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires dragon entity illusion, fear aura Wisdom save, Investigation disbelief, bonus-action movement/breath, damage type choice, and concentration."
+    ]
+  },
+  {
+    "name": "Weird",
+    "type": "spell",
+    "parent": null,
+    "source_url": "https://dnd5e.wikidot.com/spell:weird",
+    "source_category": "official",
+    "summary": "A concentration spell manifests each target's worst fears, frightening and damaging failed-save creatures.",
+    "primary_ability_scores": [],
+    "traits": {
+      "spellcasting": 0.7,
+      "illusion": 1.0,
+      "concentration": 0.8,
+      "frightened": 0.8
+    },
+    "mechanical_tags": [
+      "9th_level",
+      "illusion"
+    ],
+    "visual_or_flavor_tags": [],
+    "prerequisites": {
+      "level": null,
+      "class": null,
+      "subclass": null,
+      "species": null,
+      "feat": null,
+      "ability_score": null,
+      "spellcasting": true,
+      "proficiency": null,
+      "other": []
+    },
+    "normalized_data": {
+      "spell_level": 9,
+      "spell_level_label": "9th_level",
+      "school": "illusion",
+      "source_book": "Player's Handbook",
+      "casting_time": {
+        "raw": "1 action",
+        "action_type": "action",
+        "amount": 1,
+        "unit": "action",
+        "reaction_trigger": null
+      },
+      "range": {
+        "raw": "120 feet",
+        "type": "distance",
+        "distance": 120,
+        "unit": "feet"
+      },
+      "components": {
+        "codes": [
+          "V",
+          "S"
+        ],
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null,
+        "material_consumed": null,
+        "material_cost_gp": null
+      },
+      "component_requirements": [
+        {
+          "component_code": "V",
+          "component_name": "Verbal",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "V"
+        },
+        {
+          "component_code": "S",
+          "component_name": "Somatic",
+          "material_description": null,
+          "material_consumed": null,
+          "material_cost_gp": null,
+          "raw_text": "S"
+        }
+      ],
+      "duration": {
+        "raw": "Concentration, up to 1 minute",
+        "type": "concentration",
+        "amount": 1,
+        "unit": "minute",
+        "concentration": true
+      },
+      "ritual": false,
+      "concentration": true,
+      "classes": [
+        "Wizard"
+      ],
+      "subclasses": [],
+      "damage": [
+        {
+          "damage_type": "psychic",
+          "dice": "4d10",
+          "flat_bonus": null,
+          "condition": "failed Wisdom saving throw at end of target's turns",
+          "scales": false,
+          "raw_text": "4d10 psychic damage on failed Wisdom saving throw at end of target's turns."
+        }
+      ],
+      "healing": [],
+      "saving_throw": {
+        "has_save": true,
+        "ability": "wisdom",
+        "effect_on_success": "No effect or spell ends for target.",
+        "effect_on_failure": "Target is frightened and takes psychic damage on failed repeat saves."
+      },
+      "spell_attack": {
+        "has_spell_attack": false,
+        "attack_type": null
+      },
+      "area_of_effect": {
+        "has_area": true,
+        "shape": "sphere",
+        "size": 30,
+        "unit": "feet radius",
+        "raw": "30 feet radius sphere"
+      },
+      "targeting": {
+        "target_type": null,
+        "target_count": null,
+        "target_restrictions": [],
+        "requires_line_of_sight": null,
+        "raw": null
+      },
+      "conditions_inflicted": [
+        "frightened"
+      ],
+      "conditions_removed": [],
+      "buffs": [],
+      "debuffs": [],
+      "summons": [],
+      "created_objects": [],
+      "movement_effects": [],
+      "utility_effects": [],
+      "scaling": [],
+      "resource_interactions": [
+        {
+          "type": "concentration",
+          "description": "Requires concentration for Concentration, up to 1 minute.",
+          "raw_text": "Duration: Concentration, up to 1 minute"
+        }
+      ],
+      "restrictions": [],
+      "raw_effect_text": "A concentration spell manifests each target's worst fears, frightening and damaging failed-save creatures.",
+      "validation_notes": []
+    },
+    "build_notes": [],
+    "confidence": 0.78,
+    "needs_review": true,
+    "review_reasons": [
+      "Requires area multi-target fear, repeat saves, end-turn psychic damage, and concentration."
+    ]
+  }
+]

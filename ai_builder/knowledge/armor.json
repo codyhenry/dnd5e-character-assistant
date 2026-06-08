@@ -1,0 +1,124 @@
+{
+    "armor": {
+        "light": [
+            {
+                "name": "Padded",
+                "armor_class": "11 + Dex modifier",
+                "strength": null,
+                "stealth": "Disadvantage",
+                "weight": "8 lb.",
+                "cost": "5 gp"
+            },
+            {
+                "name": "Leather",
+                "armor_class": "11 + Dex modifier",
+                "strength": null,
+                "stealth": null,
+                "weight": "10 lb.",
+                "cost": "10 gp"
+            },
+            {
+                "name": "Studded Leather",
+                "armor_class": "12 + Dex modifier",
+                "strength": null,
+                "stealth": null,
+                "weight": "13 lb.",
+                "cost": "45 gp"
+            }
+        ],
+        "medium": [
+            {
+                "name": "Hide",
+                "armor_class": "12 + Dex modifier (max 2)",
+                "strength": null,
+                "stealth": null,
+                "weight": "12 lb.",
+                "cost": "10 gp"
+            },
+            {
+                "name": "Chain Shirt",
+                "armor_class": "13 + Dex modifier (max 2)",
+                "strength": null,
+                "stealth": null,
+                "weight": "20 lb.",
+                "cost": "50 gp"
+            },
+            {
+                "name": "Scale Mail",
+                "armor_class": "14 + Dex modifier (max 2)",
+                "strength": null,
+                "stealth": "Disadvantage",
+                "weight": "45 lb.",
+                "cost": "50 gp"
+            },
+            {
+                "name": "Spiked Armor",
+                "armor_class": "14 + Dex modifier (max 2)",
+                "strength": null,
+                "stealth": "Disadvantage",
+                "weight": "45 lb.",
+                "cost": "75 gp"
+            },
+            {
+                "name": "Breastplate",
+                "armor_class": "14 + Dex modifier (max 2)",
+                "strength": null,
+                "stealth": null,
+                "weight": "20 lb.",
+                "cost": "400 gp"
+            },
+            {
+                "name": "Halfplate",
+                "armor_class": "15 + Dex modifier (max 2)",
+                "strength": null,
+                "stealth": "Disadvantage",
+                "weight": "40 lb.",
+                "cost": "750 gp"
+            }
+        ],
+        "heavy": [
+            {
+                "name": "Ring Mail",
+                "armor_class": "14",
+                "strength": null,
+                "stealth": "Disadvantage",
+                "weight": "40 lb.",
+                "cost": "30 gp"
+            },
+            {
+                "name": "Chain Mail",
+                "armor_class": "16",
+                "strength": "Str 13",
+                "stealth": "Disadvantage",
+                "weight": "55 lb.",
+                "cost": "75 gp"
+            },
+            {
+                "name": "Splint",
+                "armor_class": "17",
+                "strength": "Str 15",
+                "stealth": "Disadvantage",
+                "weight": "60 lb.",
+                "cost": "200 gp"
+            },
+            {
+                "name": "Plate",
+                "armor_class": "18",
+                "strength": "Str 15",
+                "stealth": "Disadvantage",
+                "weight": "65 lb.",
+                "cost": "1,500 gp"
+            }
+        ],
+        "shield": [
+            {
+                "name": "Shield",
+                "armor_class": "+2",
+                "strength": null,
+                "stealth": null,
+                "weight": "6 lb.",
+                "cost": "10 gp"
+            }
+        ]
+    }
+}

@@ -1,3 +1,5 @@
+from typing import cast
+
 from django import forms
 
 from campaigns.models import Campaign
@@ -10,7 +12,9 @@ class AICharacterPromptForm(forms.Form):
     def __init__(self, *args, user=None, **kwargs):
         super().__init__(*args, **kwargs)
         if user is not None:
-            self.fields['campaign'].queryset = Campaign.objects.filter(
+            campaign_field = cast(forms.ModelChoiceField,
+                                  self.fields['campaign'])
+            campaign_field.queryset = Campaign.objects.filter(
                 memberships__user=user,
                 status=Campaign.Status.ACTIVE,
             ).distinct()

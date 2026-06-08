@@ -1,0 +1,20 @@
+[
+  {
+    "code": "V",
+    "name": "Verbal",
+    "description": "The magical, precise incantations spoken aloud.",
+    "trade_off": "You cannot cast these spells if you are gagged, unable to speak, or inside a Silence spell zone."
+  },
+  {
+    "code": "S",
+    "name": "Somatic",
+    "description": "The intricate hand gestures, waving, or forceful gesticulations required to weave the spell.",
+    "trade_off": "Requires at least one free hand to perform. You cannot do this if you are fully paralyzed, physically restrained from moving your hands, or bound."
+  },
+  {
+    "code": "M",
+    "name": "Material",
+    "description": "The physical ingredients or focal objects tied to the spell.",
+    "trade_off": "Requires a free hand to reach into a component pouch or hold a spellcasting focus, unless another feature says otherwise."
+  }
+]

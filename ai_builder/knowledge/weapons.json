@@ -1,0 +1,1324 @@
+{
+  "simple": {
+    "melee": [
+      {
+        "name": "Club",
+        "cost": "1 sp",
+        "damage": "1d4 bludgeoning",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Light",
+            "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+          }
+        ]
+      },
+      {
+        "name": "Dagger",
+        "cost": "2 gp",
+        "damage": "1d4 piercing",
+        "weight": "1 lb.",
+        "properties": [
+          {
+            "name": "Finesse",
+            "description": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
+          },
+          {
+            "name": "Light",
+            "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+          },
+          {
+            "name": "Thrown",
+            "range": "20/60",
+            "description": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
+          }
+        ]
+      },
+      {
+        "name": "Greatclub",
+        "cost": "2 sp",
+        "damage": "1d8 bludgeoning",
+        "weight": "10 lb.",
+        "properties": [
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Handaxe",
+        "cost": "5 gp",
+        "damage": "1d6 slashing",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Light",
+            "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+          },
+          {
+            "name": "Thrown",
+            "range": "20/60",
+            "description": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
+          }
+        ]
+      },
+      {
+        "name": "Javelin",
+        "cost": "5 sp",
+        "damage": "1d6 piercing",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Thrown",
+            "range": "30/120",
+            "description": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
+          }
+        ]
+      },
+      {
+        "name": "Light hammer",
+        "cost": "2 gp",
+        "damage": "1d4 bludgeoning",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Light",
+            "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+          },
+          {
+            "name": "Thrown",
+            "range": "20/60",
+            "description": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
+          }
+        ]
+      },
+      {
+        "name": "Mace",
+        "cost": "5 gp",
+        "damage": "1d6 bludgeoning",
+        "weight": "4 lb.",
+        "properties": []
+      },
+      {
+        "name": "Quarterstaff",
+        "cost": "2 sp",
+        "damage": "1d6 bludgeoning",
+        "weight": "4 lb.",
+        "properties": [
+          {
+            "name": "Versatile",
+            "damage": "1d8",
+            "description": "This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack."
+          }
+        ]
+      },
+      {
+        "name": "Sickle",
+        "cost": "1 gp",
+        "damage": "1d4 slashing",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Light",
+            "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+          }
+        ]
+      },
+      {
+        "name": "Spear",
+        "cost": "1 gp",
+        "damage": "1d6 piercing",
+        "weight": "3 lb.",
+        "properties": [
+          {
+            "name": "Thrown",
+            "range": "20/60",
+            "description": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
+          },
+          {
+            "name": "Versatile",
+            "damage": "1d8",
+            "description": "This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack."
+          }
+        ]
+      }
+    ],
+    "ranged": [
+      {
+        "name": "Crossbow, light",
+        "cost": "25 gp",
+        "damage": "1d8 piercing",
+        "weight": "5 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "80/320",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Loading",
+            "description": "Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Dart",
+        "cost": "5 cp",
+        "damage": "1d4 piercing",
+        "weight": "1/4 lb.",
+        "properties": [
+          {
+            "name": "Finesse",
+            "description": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
+          },
+          {
+            "name": "Thrown",
+            "range": "20/60",
+            "description": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
+          }
+        ]
+      },
+      {
+        "name": "Shortbow",
+        "cost": "25 gp",
+        "damage": "1d6 piercing",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "80/320",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Sling",
+        "cost": "1 sp",
+        "damage": "1d4 bludgeoning",
+        "weight": null,
+        "properties": [
+          {
+            "name": "Ammunition",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "30/120",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          }
+        ]
+      }
+    ]
+  },
+  "martial": {
+    "melee": [
+      {
+        "name": "Battleaxe",
+        "cost": "10 gp",
+        "damage": "1d8 slashing",
+        "weight": "4 lb.",
+        "properties": [
+          {
+            "name": "Versatile",
+            "damage": "1d10",
+            "description": "This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack."
+          }
+        ]
+      },
+      {
+        "name": "Flail",
+        "cost": "10 gp",
+        "damage": "1d8 bludgeoning",
+        "weight": "2 lb.",
+        "properties": []
+      },
+      {
+        "name": "Glaive",
+        "cost": "20 gp",
+        "damage": "1d10 slashing",
+        "weight": "6 lb.",
+        "properties": [
+          {
+            "name": "Heavy",
+            "description": "Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively."
+          },
+          {
+            "name": "Reach",
+            "description": "This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Greataxe",
+        "cost": "30 gp",
+        "damage": "1d12 slashing",
+        "weight": "7 lb.",
+        "properties": [
+          {
+            "name": "Heavy",
+            "description": "Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Greatsword",
+        "cost": "50 gp",
+        "damage": "2d6 slashing",
+        "weight": "6 lb.",
+        "properties": [
+          {
+            "name": "Heavy",
+            "description": "Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Halberd",
+        "cost": "20 gp",
+        "damage": "1d10 slashing",
+        "weight": "6 lb.",
+        "properties": [
+          {
+            "name": "Heavy",
+            "description": "Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively."
+          },
+          {
+            "name": "Reach",
+            "description": "This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Lance",
+        "cost": "10 gp",
+        "damage": "1d12 piercing",
+        "weight": "6 lb.",
+        "properties": [
+          {
+            "name": "Reach",
+            "description": "This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon."
+          },
+          {
+            "name": "Special",
+            "description": "A weapon with the special property has unusual rules governing its use, explained in the weapon's description (See below)"
+          }
+        ]
+      },
+      {
+        "name": "Longsword",
+        "cost": "15 gp",
+        "damage": "1d8 slashing",
+        "weight": "3 lb.",
+        "properties": [
+          {
+            "name": "Versatile",
+            "damage": "1d10",
+            "description": "This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack."
+          }
+        ]
+      },
+      {
+        "name": "Maul",
+        "cost": "10 gp",
+        "damage": "2d6 bludgeoning",
+        "weight": "10 lb.",
+        "properties": [
+          {
+            "name": "Heavy",
+            "description": "Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Morningstar",
+        "cost": "15 gp",
+        "damage": "1d8 piercing",
+        "weight": "4 lb.",
+        "properties": []
+      },
+      {
+        "name": "Pike",
+        "cost": "5 gp",
+        "damage": "1d10 piercing",
+        "weight": "18 lb.",
+        "properties": [
+          {
+            "name": "Heavy",
+            "description": "Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively."
+          },
+          {
+            "name": "Reach",
+            "description": "This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Rapier",
+        "cost": "25 gp",
+        "damage": "1d8 piercing",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Finesse",
+            "description": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
+          }
+        ]
+      },
+      {
+        "name": "Scimitar",
+        "cost": "25 gp",
+        "damage": "1d6 slashing",
+        "weight": "3 lb.",
+        "properties": [
+          {
+            "name": "Finesse",
+            "description": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
+          },
+          {
+            "name": "Light",
+            "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+          }
+        ]
+      },
+      {
+        "name": "Shortsword",
+        "cost": "10 gp",
+        "damage": "1d6 piercing",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Finesse",
+            "description": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
+          },
+          {
+            "name": "Light",
+            "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+          }
+        ]
+      },
+      {
+        "name": "Trident",
+        "cost": "5 gp",
+        "damage": "1d6 piercing",
+        "weight": "4 lb.",
+        "properties": [
+          {
+            "name": "Thrown",
+            "range": "20/60",
+            "description": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
+          },
+          {
+            "name": "Versatile",
+            "damage": "1d8",
+            "description": "This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack."
+          }
+        ]
+      },
+      {
+        "name": "War pick",
+        "cost": "5 gp",
+        "damage": "1d8 piercing",
+        "weight": "2 lb.",
+        "properties": []
+      },
+      {
+        "name": "Warhammer",
+        "cost": "15 gp",
+        "damage": "1d8 bludgeoning",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Versatile",
+            "damage": "1d10",
+            "description": "This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack."
+          }
+        ]
+      },
+      {
+        "name": "Whip",
+        "cost": "2 gp",
+        "damage": "1d4 slashing",
+        "weight": "3 lb.",
+        "properties": [
+          {
+            "name": "Finesse",
+            "description": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
+          },
+          {
+            "name": "Reach",
+            "description": "This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon."
+          }
+        ]
+      }
+    ],
+    "ranged": [
+      {
+        "name": "Blowgun",
+        "cost": "10 gp",
+        "damage": "1 piercing",
+        "weight": "1 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "25/100",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Loading",
+            "description": "Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
+          }
+        ]
+      },
+      {
+        "name": "Crossbow, hand",
+        "cost": "75 gp",
+        "damage": "1d6 piercing",
+        "weight": "3 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "30/120",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Light",
+            "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+          },
+          {
+            "name": "Loading",
+            "description": "Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
+          }
+        ]
+      },
+      {
+        "name": "Crossbow, heavy",
+        "cost": "50 gp",
+        "damage": "1d10 piercing",
+        "weight": "18 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "100/400",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Heavy",
+            "description": "Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively."
+          },
+          {
+            "name": "Loading",
+            "description": "Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Longbow",
+        "cost": "50 gp",
+        "damage": "1d8 piercing",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "150/600",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Heavy",
+            "description": "Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Net",
+        "cost": "1 gp",
+        "damage": null,
+        "weight": "3 lb.",
+        "properties": [
+          {
+            "name": "Special",
+            "description": "A weapon with the special property has unusual rules governing its use, explained in the weapon's description (See below)"
+          },
+          {
+            "name": "Thrown",
+            "range": "5/15",
+            "description": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
+          }
+        ]
+      },
+      {
+        "name": "Pistol",
+        "cost": "250 gp",
+        "damage": "1d10 piercing",
+        "weight": "3 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "30/90",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "30/90",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Loading",
+            "description": "Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
+          }
+        ]
+      },
+      {
+        "name": "Musket",
+        "cost": "500 gp",
+        "damage": "1d12 piercing",
+        "weight": "10 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "40/120",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "40/120",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Loading",
+            "description": "Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Pistol, automatic",
+        "cost": null,
+        "damage": "2d6 piercing",
+        "weight": "3 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "50/150",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "50/150",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Reload",
+            "shots": 15,
+            "description": "A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice)."
+          }
+        ]
+      },
+      {
+        "name": "Revolver",
+        "cost": null,
+        "damage": "2d8 piercing",
+        "weight": "3 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "40/120",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "40/120",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Reload",
+            "shots": 6,
+            "description": "A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice)."
+          }
+        ]
+      },
+      {
+        "name": "Rifle, hunting",
+        "cost": null,
+        "damage": "2d10 piercing",
+        "weight": "8 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "80/240",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "80/240",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Reload",
+            "shots": 5,
+            "description": "A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice)."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Rifle, automatic",
+        "cost": null,
+        "damage": "2d8 piercing",
+        "weight": "8 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "80/240",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "80/240",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Burst Fire",
+            "description": "A weapon that has the burst fire property can make a normal single-target attack, or it can spray a 10-foot-cube area within normal range with shots. Each creature in the area must succeed on a DC 15 Dexterity saving throw or take the weapon's normal damage. This action uses ten pieces of ammunition."
+          },
+          {
+            "name": "Reload",
+            "shots": 30,
+            "description": "A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice)."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Shotgun",
+        "cost": null,
+        "damage": "2d8 piercing",
+        "weight": "7 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "30/90",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "30/90",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Reload",
+            "shots": 2,
+            "description": "A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice)."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Laser pistol",
+        "cost": null,
+        "damage": "3d6 radiant",
+        "weight": "2 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "40/120",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "40/120",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Reload",
+            "shots": 50,
+            "description": "A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice)."
+          }
+        ]
+      },
+      {
+        "name": "Antimatter rifle",
+        "cost": null,
+        "damage": "6d8 necrotic",
+        "weight": "10 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "120/360",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "120/360",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Reload",
+            "shots": 2,
+            "description": "A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice)."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      },
+      {
+        "name": "Laser rifle",
+        "cost": null,
+        "damage": "3d8 radiant",
+        "weight": "7 lb.",
+        "properties": [
+          {
+            "name": "Ammunition",
+            "range": "100/300",
+            "description": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way."
+          },
+          {
+            "name": "Range",
+            "range": "100/300",
+            "description": "A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can’t attack a target beyond the weapon’s long range."
+          },
+          {
+            "name": "Reload",
+            "shots": 30,
+            "description": "A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice)."
+          },
+          {
+            "name": "Two-Handed",
+            "description": "This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it."
+          }
+        ]
+      }
+    ],
+    "poisons": [
+      {
+        "name": "Assassin's Blood",
+        "cost": "150 gp",
+        "type": {
+          "name": "Ingested",
+          "description": "A creature must swallow an entire dose of ingested poison to suffer its effects. You might decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save. The dose can be delivered in food or a liquid."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 10
+          },
+          "damage": {
+            "amount": "1d12",
+            "average": 6,
+            "type": "poison"
+          },
+          "conditions": [
+            {
+              "name": "poisoned",
+              "duration": "24 hours",
+              "applies_on": "failed save"
+            }
+          ],
+          "success": "The creature takes half damage and is not poisoned.",
+          "failure": "The creature takes 6 (1d12) poison damage and is poisoned for 24 hours."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:assassins-blood"
+      },
+      {
+        "name": "Burnt Othur Fumes",
+        "cost": "500 gp",
+        "type": {
+          "name": "Inhaled",
+          "description": "These poisons are powders or gases that take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 13
+          },
+          "damage": {
+            "initial": {
+              "amount": "3d6",
+              "average": 10,
+              "type": "poison"
+            },
+            "successive_failed_save": {
+              "amount": "1d6",
+              "average": 3,
+              "type": "poison"
+            }
+          },
+          "repeat_save": {
+            "timing": "start of each of the poisoned creature's turns",
+            "ends_after": "three successful saves"
+          },
+          "success": "No initial damage is taken.",
+          "failure": "The creature takes 10 (3d6) poison damage and must repeat the saving throw at the start of each of its turns."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:burnt-othur-fumes"
+      },
+      {
+        "name": "Carrion Crawler Mucus",
+        "cost": "200 gp",
+        "type": {
+          "name": "Contact",
+          "description": "Contact poison can be smeared on an object and remains potent until it is touched or washed off. A creature that touches contact poison with exposed skin suffers its effects."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 13
+          },
+          "conditions": [
+            {
+              "name": "poisoned",
+              "duration": "1 minute",
+              "applies_on": "failed save"
+            },
+            {
+              "name": "paralyzed",
+              "duration": "while poisoned by this poison",
+              "applies_on": "failed save"
+            }
+          ],
+          "repeat_save": {
+            "timing": "end of each of the creature's turns",
+            "ends_on_success": true
+          },
+          "harvesting": "This poison must be harvested from a dead or incapacitated carrion crawler.",
+          "success": "The creature is not affected.",
+          "failure": "The creature is poisoned for 1 minute. While poisoned this way, the creature is paralyzed."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:carrion-crawler-mucus"
+      },
+      {
+        "name": "Drow Poison",
+        "cost": "200 gp",
+        "type": {
+          "name": "Injury",
+          "description": "Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 13
+          },
+          "conditions": [
+            {
+              "name": "poisoned",
+              "duration": "1 hour",
+              "applies_on": "failed save"
+            },
+            {
+              "name": "unconscious",
+              "duration": "while poisoned this way, until damaged or awakened",
+              "applies_on": "failed save by 5 or more"
+            }
+          ],
+          "special": "The unconscious creature wakes up if it takes damage or if another creature takes an action to shake it awake.",
+          "success": "The creature is not affected.",
+          "failure": "The creature is poisoned for 1 hour. If the save fails by 5 or more, the creature is also unconscious while poisoned this way."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:drow-poison"
+      },
+      {
+        "name": "Essence of Ether",
+        "cost": "300 gp",
+        "type": {
+          "name": "Inhaled",
+          "description": "These poisons are powders or gases that take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 15
+          },
+          "conditions": [
+            {
+              "name": "poisoned",
+              "duration": "8 hours",
+              "applies_on": "failed save"
+            },
+            {
+              "name": "unconscious",
+              "duration": "while poisoned this way, until damaged or awakened",
+              "applies_on": "failed save"
+            }
+          ],
+          "special": "The unconscious creature wakes up if it takes damage or if another creature takes an action to shake it awake.",
+          "success": "The creature is not affected.",
+          "failure": "The creature becomes poisoned for 8 hours. While poisoned this way, the creature is unconscious."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:essence-of-ether"
+      },
+      {
+        "name": "Malice",
+        "cost": "250 gp",
+        "type": {
+          "name": "Inhaled",
+          "description": "These poisons are powders or gases that take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 15
+          },
+          "conditions": [
+            {
+              "name": "poisoned",
+              "duration": "1 hour",
+              "applies_on": "failed save"
+            },
+            {
+              "name": "blinded",
+              "duration": "while poisoned by this poison",
+              "applies_on": "failed save"
+            }
+          ],
+          "success": "The creature is not affected.",
+          "failure": "The creature becomes poisoned for 1 hour. While poisoned this way, the creature is blinded."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:malice"
+      },
+      {
+        "name": "Midnight Tears",
+        "cost": "1,500 gp",
+        "type": {
+          "name": "Ingested",
+          "description": "A creature must swallow an entire dose of ingested poison to suffer its effects. You might decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save. The dose can be delivered in food or a liquid."
+        },
+        "effect": {
+          "onset": "stroke of midnight",
+          "save": {
+            "ability": "Constitution",
+            "dc": 17
+          },
+          "damage": {
+            "amount": "9d6",
+            "average": 31,
+            "type": "poison"
+          },
+          "special": "The creature suffers no effect until midnight. If the poison has not been neutralized before then, the saving throw occurs.",
+          "success": "The creature takes half damage.",
+          "failure": "The creature takes 31 (9d6) poison damage."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:midnight-tears"
+      },
+      {
+        "name": "Oil of Taggit",
+        "cost": "400 gp",
+        "type": {
+          "name": "Contact",
+          "description": "Contact poison can be smeared on an object and remains potent until it is touched or washed off. A creature that touches contact poison with exposed skin suffers its effects."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 13
+          },
+          "conditions": [
+            {
+              "name": "poisoned",
+              "duration": "24 hours",
+              "applies_on": "failed save"
+            },
+            {
+              "name": "unconscious",
+              "duration": "while poisoned this way, until damaged",
+              "applies_on": "failed save"
+            }
+          ],
+          "special": "The unconscious creature wakes up if it takes damage.",
+          "success": "The creature is not affected.",
+          "failure": "The creature becomes poisoned for 24 hours. While poisoned this way, the creature is unconscious."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:oil-of-taggit"
+      },
+      {
+        "name": "Pale Tincture",
+        "cost": "250 gp",
+        "type": {
+          "name": "Ingested",
+          "description": "A creature must swallow an entire dose of ingested poison to suffer its effects. You might decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save. The dose can be delivered in food or a liquid."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 16
+          },
+          "damage": {
+            "amount": "1d6",
+            "average": 3,
+            "type": "poison"
+          },
+          "conditions": [
+            {
+              "name": "poisoned",
+              "duration": "until seven successful saving throws",
+              "applies_on": "failed save"
+            }
+          ],
+          "repeat_save": {
+            "timing": "every 24 hours",
+            "failure": "The creature takes 3 (1d6) poison damage.",
+            "ends_after": "seven successful saving throws"
+          },
+          "special": "Until the poison ends, damage dealt by the poison cannot be healed by any means.",
+          "success": "The creature is not affected by the initial dose.",
+          "failure": "The creature takes 3 (1d6) poison damage and becomes poisoned."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:pale-tincture"
+      },
+      {
+        "name": "Purple Worm Poison",
+        "cost": "2,000 gp",
+        "type": {
+          "name": "Injury",
+          "description": "Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 19
+          },
+          "damage": {
+            "amount": "12d6",
+            "average": 42,
+            "type": "poison"
+          },
+          "harvesting": "This poison must be harvested from a dead or incapacitated purple worm.",
+          "success": "The creature takes half damage.",
+          "failure": "The creature takes 42 (12d6) poison damage."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:purple-worm-poison"
+      },
+      {
+        "name": "Serpent Venom",
+        "cost": "200 gp",
+        "type": {
+          "name": "Injury",
+          "description": "Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 11
+          },
+          "damage": {
+            "amount": "3d6",
+            "average": 10,
+            "type": "poison"
+          },
+          "harvesting": "This poison must be harvested from a dead or incapacitated giant poisonous snake.",
+          "success": "The creature takes half damage.",
+          "failure": "The creature takes 10 (3d6) poison damage."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:serpent-venom"
+      },
+      {
+        "name": "Torpor",
+        "cost": "600 gp",
+        "type": {
+          "name": "Ingested",
+          "description": "A creature must swallow an entire dose of ingested poison to suffer its effects. You might decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save. The dose can be delivered in food or a liquid."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 15
+          },
+          "conditions": [
+            {
+              "name": "poisoned",
+              "duration": "4d6 hours",
+              "applies_on": "failed save"
+            },
+            {
+              "name": "incapacitated",
+              "duration": "while poisoned by this poison",
+              "applies_on": "failed save"
+            }
+          ],
+          "success": "The creature is not affected.",
+          "failure": "The creature becomes poisoned for 4d6 hours. While poisoned this way, the creature is incapacitated."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:torpor"
+      },
+      {
+        "name": "Truth Serum",
+        "cost": "150 gp",
+        "type": {
+          "name": "Ingested",
+          "description": "A creature must swallow an entire dose of ingested poison to suffer its effects. You might decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save. The dose can be delivered in food or a liquid."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 11
+          },
+          "conditions": [
+            {
+              "name": "poisoned",
+              "duration": "1 hour",
+              "applies_on": "failed save"
+            }
+          ],
+          "special": "While poisoned this way, the creature cannot knowingly speak a lie, as if under the effect of a zone of truth spell.",
+          "success": "The creature is not affected.",
+          "failure": "The creature becomes poisoned for 1 hour and cannot knowingly speak a lie."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:truth-serum"
+      },
+      {
+        "name": "Wyvern Poison",
+        "cost": "1,200 gp",
+        "type": {
+          "name": "Injury",
+          "description": "Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects."
+        },
+        "effect": {
+          "save": {
+            "ability": "Constitution",
+            "dc": 15
+          },
+          "damage": {
+            "amount": "7d6",
+            "average": 24,
+            "type": "poison"
+          },
+          "harvesting": "This poison must be harvested from a dead or incapacitated wyvern.",
+          "success": "The creature takes half damage.",
+          "failure": "The creature takes 24 (7d6) poison damage."
+        },
+        "source_url": "https://dnd5e.wikidot.com/poisons:wyvern-poison"
+      }
+    ],
+    "explosive_categories": {
+      "renaissance": {
+        "name": "Renaissance",
+        "items": [
+          {
+            "name": "Bomb",
+            "cost": "150 gp",
+            "weight": "1 lb.",
+            "description": "As an action, a character can light this bomb and throw it at a point up to 60 feet away. Each creature within 5 feet of that point must succeed on a DC 12 Dexterity saving throw or take 3d6 fire damage."
+          },
+          {
+            "name": "Gunpowder, keg",
+            "cost": "250 gp",
+            "weight": "20 lb.",
+            "description": "Gunpowder is chiefly used to propel a bullet out of the barrel of a pistol or rifle, or it is formed into a bomb. Gunpowder is sold in small wooden kegs and in water-resistant powder horns. Setting fire to a container full of gunpowder can cause it to explode, dealing 7d6 fire damage to creatures within 10 feet of it. A successful DC 12 Dexterity saving throw halves the damage."
+          },
+          {
+            "name": "Gunpowder, powder horn",
+            "cost": "35 gp",
+            "weight": "2 lb.",
+            "description": "Gunpowder is chiefly used to propel a bullet out of the barrel of a pistol or rifle, or it is formed into a bomb. Gunpowder is sold in small wooden kegs and in water-resistant powder horns. Setting fire to a container full of gunpowder can cause it to explode, dealing 3d6 fire damage to creatures within 10 feet of it. A successful DC 12 Dexterity saving throw halves the damage. Setting fire to an ounce of gunpowder causes it to flare for 1 round, shedding bright light in a 30-foot radius and dim light for an additional 30 feet."
+          }
+        ]
+      },
+      "modern": {
+        "name": "Modern",
+        "items": [
+          {
+            "name": "Dynamite (stick)",
+            "cost": null,
+            "weight": "1 lb.",
+            "description": "As an action, a creature can light a stick of dynamite and throw it at a point up to 60 feet away. Each creature within 5 feet of that point must make a DC 12 Dexterity saving throw, taking 3d6 bludgeoning damage on a failed save, or half as much damage on a successful one. A character can bind sticks of dynamite together so they explode at the same time. Each additional stick increases the damage by 1d6, to a maximum of 10d6, and the burst radius by 5 feet, to a maximum of 20 feet. Dynamite can be rigged with a longer fuse to explode after a set amount of time, usually 1 to 6 rounds. Roll initiative for the dynamite. After the set number of rounds goes by, the dynamite explodes on that initiative."
+          },
+          {
+            "name": "Grenade, fragmentation",
+            "cost": null,
+            "weight": "1 lb.",
+            "description": "As an action, a character can throw a grenade at a point up to 60 feet away. With a grenade launcher, the character can propel the grenade up to 120 feet away. Each creature within 20 feet of an exploding fragmentation grenade must make a DC 15 Dexterity saving throw, taking 5d6 piercing damage on a failed save, or half as much damage on a successful one."
+          },
+          {
+            "name": "Grenade, smoke",
+            "cost": null,
+            "weight": "2 lb.",
+            "description": "As an action, a character can throw a grenade at a point up to 60 feet away. With a grenade launcher, the character can propel the grenade up to 120 feet away. One round after a smoke grenade lands, it emits a cloud of smoke that creates a heavily obscured area in a 20-foot radius. A moderate wind of at least 10 miles per hour disperses the smoke in 4 rounds; a strong wind of 20 or more miles per hour disperses it in 1 round."
+          },
+          {
+            "name": "Grenade Launcher",
+            "cost": null,
+            "weight": "7 lb.",
+            "description": "With a grenade launcher, a character can propel a grenade up to 120 feet away."
+          }
+        ]
+      }
+    }
+  }
+}
