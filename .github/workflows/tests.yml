@@ -41,7 +41,7 @@ jobs:
           npm install --global pyright
 
       - name: Run Pyright type checks
-        run: pyright
+        run: pyright --project pyrightconfig.json
 
       - name: Run Django system checks
         run: python manage.py check
