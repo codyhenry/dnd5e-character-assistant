@@ -3,6 +3,7 @@ from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import CreateView, DetailView, ListView, TemplateView, UpdateView
+from typing import cast
 
 from .forms import CampaignCreateForm, CampaignMembershipForm, CampaignUpdateForm
 from .models import Campaign
@@ -20,9 +21,11 @@ class CampaignListView(LoginRequiredMixin, ListView):
 
 class DMCampaignDashboardView(LoginRequiredMixin, TemplateView):
     template_name = 'campaigns/dm_dashboard.html'
+    campaign: Campaign
 
     def dispatch(self, request, *args, **kwargs):
-        self.campaign = get_object_or_404(Campaign, pk=kwargs['pk'])
+        self.campaign = cast(
+            Campaign, get_object_or_404(Campaign, pk=kwargs['pk']))
         if not is_campaign_dm(request.user, self.campaign):
             return HttpResponseForbidden('DM access required')
         return super().dispatch(request, *args, **kwargs)
@@ -40,7 +43,7 @@ class CampaignDetailView(LoginRequiredMixin, DetailView):
     template_name = 'campaigns/campaign_detail.html'
 
     def dispatch(self, request, *args, **kwargs):
-        campaign = self.get_object()
+        campaign = cast(Campaign, self.get_object())
         if not is_campaign_member(request.user, campaign):
             return HttpResponseForbidden('Campaign membership required')
         return super().dispatch(request, *args, **kwargs)
@@ -50,6 +53,7 @@ class CampaignCreateView(LoginRequiredMixin, CreateView):
     model = Campaign
     form_class = CampaignCreateForm
     template_name = 'campaigns/campaign_form.html'
+    object: Campaign
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
@@ -66,9 +70,10 @@ class CampaignUpdateView(LoginRequiredMixin, UpdateView):
     model = Campaign
     form_class = CampaignUpdateForm
     template_name = 'campaigns/campaign_form.html'
+    object: Campaign
 
     def dispatch(self, request, *args, **kwargs):
-        campaign = self.get_object()
+        campaign = cast(Campaign, self.get_object())
         if not is_campaign_dm(request.user, campaign):
             return HttpResponseForbidden('DM access required')
         return super().dispatch(request, *args, **kwargs)
@@ -80,9 +85,10 @@ class CampaignUpdateView(LoginRequiredMixin, UpdateView):
 class CampaignMembershipManageView(LoginRequiredMixin, DetailView):
     model = Campaign
     template_name = 'campaigns/manage_members.html'
+    object: Campaign
 
     def dispatch(self, request, *args, **kwargs):
-        self.object = self.get_object()
+        self.object = cast(Campaign, self.get_object())
         if not is_campaign_dm(request.user, self.object):
             return HttpResponseForbidden('DM access required')
         return super().dispatch(request, *args, **kwargs)
@@ -93,7 +99,7 @@ class CampaignMembershipManageView(LoginRequiredMixin, DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
+        self.object = cast(Campaign, self.get_object())
         if not is_campaign_dm(request.user, self.object):
             return HttpResponseForbidden('DM access required')
         form = CampaignMembershipForm(request.POST)

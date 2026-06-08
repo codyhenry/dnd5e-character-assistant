@@ -1,3 +1,5 @@
+from typing import cast
+
 from django import forms
 
 from .models import Campaign, CampaignMembership
@@ -16,11 +18,13 @@ class CampaignUpdateForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        active_ruleset_field = cast(
+            forms.ModelChoiceField, self.fields['active_ruleset'])
         # Only allow assigning active rulesets that belong to this campaign.
         if self.instance and self.instance.pk:
-            self.fields['active_ruleset'].queryset = self.instance.rulesets.all()
+            active_ruleset_field.queryset = self.instance.rulesets.all()
         else:
-            self.fields['active_ruleset'].queryset = self.fields['active_ruleset'].queryset.none()
+            active_ruleset_field.queryset = active_ruleset_field.queryset.none()
 
 
 class CampaignMembershipForm(forms.ModelForm):

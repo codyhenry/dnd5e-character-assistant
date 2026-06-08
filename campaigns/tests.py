@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
+from django import forms
 from django.test import TestCase
 from django.urls import reverse
+from typing import cast
 
 from rulesets.models import Ruleset
 
@@ -39,7 +41,8 @@ class CampaignFormBehaviorTests(TestCase):
             reverse('campaigns:edit', args=[campaign.pk]))
 
         self.assertEqual(response.status_code, 200)
-        queryset = response.context['form'].fields['active_ruleset'].queryset
+        queryset = cast(forms.ModelChoiceField,
+                        response.context['form'].fields['active_ruleset']).queryset
         self.assertIn(own_ruleset, queryset)
         self.assertNotIn(other_ruleset, queryset)
 
