@@ -1,8 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import CreateView, DetailView, ListView, TemplateView, UpdateView
+from typing import cast
 
 from campaigns.models import Campaign
 from campaigns.permissions import can_create_npc, can_view_build, is_campaign_dm
@@ -10,7 +13,12 @@ from campaigns.permissions import can_create_npc, can_view_build, is_campaign_dm
 from .forms import CharacterBuildForm
 from .models import CharacterBuild
 from .selectors import campaign_builds_for_dm, visible_builds_for_user
-from .services import build_character_sheet_context
+from .services import (
+    build_character_sheet_context,
+    revalidate_character_build,
+    require_valid_build_for_reuse,
+    sync_selected_options_for_build,
+)
 
 
 class PlayerDashboardView(LoginRequiredMixin, TemplateView):
@@ -35,6 +43,7 @@ class CharacterBuildListView(LoginRequiredMixin, ListView):
 class CharacterBuildDetailView(LoginRequiredMixin, DetailView):
     model = CharacterBuild
     template_name = 'characters/build_detail.html'
+    object: CharacterBuild
 
     def dispatch(self, request, *args, **kwargs):
         build = self.get_object()
@@ -69,6 +78,7 @@ class CharacterBuildCreateView(LoginRequiredMixin, CreateView):
     model = CharacterBuild
     form_class = CharacterBuildForm
     template_name = 'characters/build_form.html'
+    object: CharacterBuild
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -90,7 +100,9 @@ class CharacterBuildCreateView(LoginRequiredMixin, CreateView):
         if build_type == CharacterBuild.BuildType.NPC and not can_create_npc(self.request.user, campaign):
             return HttpResponseForbidden('Only DMs can create NPCs.')
         form.instance.owner = self.request.user
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        sync_selected_options_for_build(self.object)
+        return response
 
     def get_success_url(self):
         return reverse('characters:detail', args=[self.object.pk])
@@ -100,23 +112,45 @@ class CharacterBuildUpdateView(LoginRequiredMixin, UpdateView):
     model = CharacterBuild
     form_class = CharacterBuildForm
     template_name = 'characters/build_form.html'
+    object: CharacterBuild
 
     def dispatch(self, request, *args, **kwargs):
-        build = self.get_object()
-        if not (build.owner_id == request.user.id or is_campaign_dm(request.user, build.campaign)):
+        build = cast(CharacterBuild, self.get_object())
+        user_id = getattr(request.user, 'id', None)
+        if not (build.owner_id == user_id or is_campaign_dm(request.user, build.campaign)):
             return HttpResponseForbidden('You cannot edit this build.')
         return super().dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse('characters:detail', args=[self.object.pk])
 
+    def form_valid(self, form):
+        current_build = cast(CharacterBuild, self.get_object())
+        requested_status = form.cleaned_data.get(
+            'status', current_build.status)
+
+        if requested_status == CharacterBuild.Status.ACTIVE:
+            validation_result = require_valid_build_for_reuse(current_build)
+            if not validation_result.is_valid:
+                form.add_error(
+                    None,
+                    'This build must pass current validation before it can be activated or reused.',
+                )
+                return self.form_invalid(form)
+
+        response = super().form_valid(form)
+        sync_selected_options_for_build(self.object)
+        return response
+
 
 class DMAllBuildsView(LoginRequiredMixin, ListView):
     model = CharacterBuild
     template_name = 'characters/dm_all_builds.html'
+    campaign: Campaign
 
     def dispatch(self, request, *args, **kwargs):
-        self.campaign = get_object_or_404(Campaign, pk=kwargs['campaign_pk'])
+        self.campaign = cast(Campaign, get_object_or_404(
+            Campaign, pk=kwargs['campaign_pk']))
         if not is_campaign_dm(request.user, self.campaign):
             return HttpResponseForbidden('DM access required')
         return super().dispatch(request, *args, **kwargs)
@@ -135,3 +169,26 @@ class NPCCreateView(CharacterBuildCreateView):
         initial = super().get_initial()
         initial['build_type'] = CharacterBuild.BuildType.NPC
         return initial
+
+
+@login_required
+def revalidate_build_view(request, pk):
+    if request.method != 'POST':
+        return redirect('characters:detail', pk=pk)
+
+    build = get_object_or_404(CharacterBuild, pk=pk)
+    if not can_view_build(request.user, build):
+        return HttpResponseForbidden('You cannot revalidate this build.')
+
+    result = revalidate_character_build(build)
+    if result.is_valid:
+        messages.success(
+            request,
+            'Build validated successfully and is ready for reuse.',
+        )
+    else:
+        messages.error(
+            request,
+            'Build validation failed. Review the validation errors before reuse.',
+        )
+    return redirect('characters:detail', pk=pk)

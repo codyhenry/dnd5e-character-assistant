@@ -1,5 +1,7 @@
 from django import forms
 
+from typing import cast
+
 from campaigns.models import Campaign
 
 from .models import CharacterBuild, CharacterClassLevel
@@ -20,7 +22,9 @@ class CharacterBuildForm(forms.ModelForm):
                 queryset = (queryset | Campaign.objects.filter(
                     pk=self.instance.campaign_id)).distinct()
 
-            self.fields['campaign'].queryset = queryset
+            campaign_field = cast(forms.ModelChoiceField,
+                                  self.fields['campaign'])
+            campaign_field.queryset = queryset
 
     class Meta:
         model = CharacterBuild
