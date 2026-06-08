@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>D&D Options</h1>
-<p class="action-links"><a href="{% url 'dnd_options:create' %}">Create option</a></p>
+<p class="action-links">
+  <a href="{% url 'dnd_options:create' %}">Create option</a>
+  <a href="{% url 'dnd_options:import_json' %}">Import JSON payload</a>
+  <a href="{% url 'dnd_options:review_queue' %}">Review queue</a>
+</p>
 <ul>
   {% for option in object_list %}
-  <li>{{ option.name }} ({{ option.option_type }})</li>
+  <li>
+    {{ option.name }} ({{ option.option_type }})
+    {% if option.needs_review %}
+    <span class="status-badge status-badge-ended">Needs review</span>
+    {% endif %}
+  </li>
   {% empty %}
   <li>No options yet.</li>
   {% endfor %}

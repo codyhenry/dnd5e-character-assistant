@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Review: {{ review.dnd_option.name }}</h1>
+<div class="kv-list">
+  <div class="kv-row">
+    <div class="kv-key">Type</div>
+    <div class="kv-value">{{ review.dnd_option.option_type }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Source URL</div>
+    <div class="kv-value">{{ review.dnd_option.source_url }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Source Category</div>
+    <div class="kv-value">{{ review.dnd_option.source_category }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Review Status</div>
+    <div class="kv-value">{{ review.status }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Reason</div>
+    <div class="kv-value">{{ review.reason }}</div>
+  </div>
+</div>
+
+<h2>AI Review Reasons</h2>
+<ul>
+  {% for reason in review.ai_review_reasons %}
+  <li>{{ reason }}</li>
+  {% empty %}
+  <li>No AI review reasons provided.</li>
+  {% endfor %}
+</ul>
+
+<h2>Path Preview</h2>
+<form method="get">
+  <p>
+    <label for="id_preview_path">Target path</label>
+    <input id="id_preview_path" type="text" name="preview_path" value="{{ preview_path }}"
+      placeholder="normalized_data.variants[0].features[1].description">
+  </p>
+  <button type="submit">Preview current value</button>
+</form>
+{% if preview_error %}
+<p>{{ preview_error }}</p>
+{% endif %}
+{% if preview_path and not preview_error %}
+<pre>{{ preview_value|pprint }}</pre>
+{% endif %}
+
+<h2>Current Traits</h2>
+<pre>{{ review.dnd_option.traits|pprint }}</pre>
+<h2>Current Normalized Data</h2>
+<pre>{{ review.dnd_option.normalized_data|pprint }}</pre>
+
+<h2>Comments</h2>
+<ul>
+  {% for comment in comments %}
+  <li>
+    <strong>{{ comment.author.username }}</strong> ({{ comment.visibility }})
+    {% if comment.target_path %}<div>Path: {{ comment.target_path }}</div>{% endif %}
+    {% if comment.target_path %}<div>Snapshot:
+      <pre>{{ comment.target_snapshot|pprint }}</pre>
+    </div>{% endif %}
+    <div>{{ comment.comment }}</div>
+  </li>
+  {% empty %}
+  <li>No comments yet.</li>
+  {% endfor %}
+</ul>
+
+<h3>Add Comment</h3>
+<form method="post" action="{% url 'dnd_options:add_review_comment' review.pk %}">
+  {% csrf_token %}
+  {{ comment_form.as_p }}
+  <p>Examples: name, traits.poison, normalized_data.features[0].name</p>
+  <button type="submit">Add Comment</button>
+</form>
+
+<h2>Suggested Changes</h2>
+<ul>
+  {% for change in suggested_changes %}
+  <li>
+    <div><strong>{{ change.operation }}</strong> {{ change.target_path }} ({{ change.status }})</div>
+    <div>Proposed by {{ change.proposed_by.username }}</div>
+    <div>Reason: {{ change.reason }}</div>
+    {% if change.proposed_value is not None %}<div>Proposed value:
+      <pre>{{ change.proposed_value|pprint }}</pre>
+    </div>{% endif %}
+    {% if can_manage_reviews %}
+    {% if change.status == 'PENDING' %}
+    <form method="post" action="{% url 'dnd_options:approve_change' change.pk %}">{% csrf_token %}<button
+        type="submit">Approve</button></form>
+    <form method="post" action="{% url 'dnd_options:reject_change' change.pk %}">
+      {% csrf_token %}
+      {{ rejection_form.as_p }}
+      <button type="submit">Reject</button>
+    </form>
+    {% endif %}
+    {% if change.status == 'APPROVED' %}
+    <form method="post" action="{% url 'dnd_options:apply_change' change.pk %}">{% csrf_token %}<button
+        type="submit">Apply</button></form>
+    {% endif %}
+    {% endif %}
+  </li>
+  {% empty %}
+  <li>No suggested changes yet.</li>
+  {% endfor %}
+</ul>
+
+<h3>Propose Structured Change</h3>
+<form method="post" action="{% url 'dnd_options:propose_change' review.pk %}">
+  {% csrf_token %}
+  {{ suggested_change_form.as_p }}
+  <p>Examples: traits.poison, normalized_data.variants[0].features[1].description</p>
+  <button type="submit">Propose Change</button>
+</form>
+
+{% if can_manage_reviews %}
+<h2>Resolve Review</h2>
+<form method="post" action="{% url 'dnd_options:resolve_review' review.pk %}">
+  {% csrf_token %}
+  {{ resolution_form.as_p }}
+  <button type="submit">Resolve</button>
+</form>
+{% endif %}
+{% endblock %}

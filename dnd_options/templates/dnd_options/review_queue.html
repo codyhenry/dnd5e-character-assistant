@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>D&D Option Review Queue</h1>
+<ul class="record-list">
+  {% for review in reviews %}
+  <li>
+    <a class="record-link" href="{% url 'dnd_options:review_detail' review.pk %}">
+      <span class="record-title">{{ review.dnd_option.name }}</span>
+      <span class="record-meta record-meta-rows">
+        <span class="status-badge status-badge-ended">{{ review.status }}</span>
+        <span>{{ review.severity }}</span>
+      </span>
+    </a>
+  </li>
+  {% empty %}
+  <li class="record-empty">No open reviews.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
