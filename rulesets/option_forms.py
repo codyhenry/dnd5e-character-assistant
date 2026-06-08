@@ -1,11 +1,19 @@
+from typing import TYPE_CHECKING
+
 from django import forms
+from django.forms import ModelChoiceField
 
 from dnd_options.models import DNDOption
 
 from .models import RulesetBannedOption
 
+if TYPE_CHECKING:
+    from .models import Ruleset
+
 
 class RulesetBannedOptionForm(forms.ModelForm):
+    ruleset: 'Ruleset | None'
+
     banned_option = forms.ModelChoiceField(
         queryset=DNDOption.objects.none(),
         required=True,
@@ -20,10 +28,17 @@ class RulesetBannedOptionForm(forms.ModelForm):
             'notes': forms.Textarea(attrs={'rows': 3}),
         }
 
-    def __init__(self, *args, ruleset=None, **kwargs):
+    def __init__(
+        self,
+        *args,
+        ruleset: 'Ruleset | None' = None,
+        **kwargs,
+    ) -> None:
         super().__init__(*args, **kwargs)
         self.ruleset = ruleset
-        self.fields['banned_option'].queryset = DNDOption.objects.order_by(
+        banned_option_field = self.fields['banned_option']
+        assert isinstance(banned_option_field, ModelChoiceField)
+        banned_option_field.queryset = DNDOption.objects.order_by(
             'option_type', 'name'
         )
 
@@ -42,7 +57,7 @@ class RulesetBannedOptionForm(forms.ModelForm):
             raise forms.ValidationError('This option is already restricted for this ruleset.')
         return banned_option
 
-    def save(self, commit=True):
+    def save(self, commit: bool = True) -> RulesetBannedOption:
         instance = super().save(commit=False)
         if self.ruleset is not None:
             instance.ruleset = self.ruleset
