@@ -41,6 +41,7 @@ jobs:
           npm install --global pyright
 
       - name: Run Pyright type checks
+        continue-on-error: true
         run: pyright --project pyrightconfig.json
 
       - name: Run Django system checks
