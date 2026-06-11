@@ -1,6 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Player Dashboard</h1>
+
+<h2>Build Validation</h2>
+<div class="kv-list">
+  <div class="kv-row">
+    <div class="kv-key">Total builds</div>
+    <div class="kv-value">{{ validation_summary.total }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Valid</div>
+    <div class="kv-value">{{ validation_summary.valid }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Stale</div>
+    <div class="kv-value">{{ validation_summary.stale }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Invalid</div>
+    <div class="kv-value">{{ validation_summary.invalid }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Unknown</div>
+    <div class="kv-value">{{ validation_summary.unknown }}</div>
+  </div>
+</div>
+
+{% if builds_requiring_attention %}
+<h3>Builds Needing Attention</h3>
+<ul class="record-list">
+  {% for build in builds_requiring_attention %}
+  <li>
+    <a href="{% url 'characters:detail' build.pk %}" class="record-link">
+      <span class="record-title">{{ build.name }}</span>
+      <span class="record-meta">
+        {{ build.campaign.name }} • {{ build.validation_status }}{% if build.needs_revalidation %} • needs revalidation{% endif %}
+        {% if build.revalidation_reason %} • {{ build.revalidation_reason }}{% endif %}
+      </span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
 <h2>Campaigns</h2>
 <ul class="record-list">
   {% for campaign in campaigns %}
@@ -20,7 +62,9 @@
   <li>
     <a href="{% url 'characters:detail' build.pk %}" class="record-link">
       <span class="record-title">{{ build.name }}</span>
-      <span class="record-meta">{{ build.build_type }} • Created {{ build.created_at|date:"M j, Y" }}</span>
+      <span class="record-meta">
+        {{ build.build_type }} • {{ build.validation_status }}{% if build.needs_revalidation %} • needs revalidation{% endif %} • Created {{ build.created_at|date:"M j, Y" }}
+      </span>
     </a>
   </li>
   {% empty %}

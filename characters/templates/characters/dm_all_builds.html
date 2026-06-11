@@ -1,16 +1,65 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>All Builds: {{ campaign.name }}</h1>
+
+<h2>Validation Summary</h2>
+<div class="kv-list">
+  <div class="kv-row">
+    <div class="kv-key">Total builds</div>
+    <div class="kv-value">{{ validation_summary.total }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Valid</div>
+    <div class="kv-value">{{ validation_summary.valid }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Stale</div>
+    <div class="kv-value">{{ validation_summary.stale }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Invalid</div>
+    <div class="kv-value">{{ validation_summary.invalid }}</div>
+  </div>
+  <div class="kv-row">
+    <div class="kv-key">Unknown</div>
+    <div class="kv-value">{{ validation_summary.unknown }}</div>
+  </div>
+</div>
+
+<h2>Filters</h2>
+<p class="action-links">
+  <a href="{% url 'characters:dm_all_builds' campaign.pk %}">All</a>
+  <a href="{% url 'characters:dm_all_builds' campaign.pk %}?validation_status=ATTENTION">Needs attention</a>
+  <a href="{% url 'characters:dm_all_builds' campaign.pk %}?validation_status=STALE">Stale</a>
+  <a href="{% url 'characters:dm_all_builds' campaign.pk %}?validation_status=INVALID">Invalid</a>
+  <a href="{% url 'characters:dm_all_builds' campaign.pk %}?validation_status=VALID">Valid</a>
+  <a href="{% url 'characters:dm_all_builds' campaign.pk %}?validation_status=UNKNOWN">Unknown</a>
+</p>
+
+{% if active_validation_filter %}
+<p>
+  Showing validation filter:
+  <strong>{{ active_validation_filter }}</strong>
+</p>
+{% endif %}
+
 <ul class="record-list">
   {% for build in object_list %}
   <li>
     <a href="{% url 'characters:detail' build.pk %}" class="record-link">
       <span class="record-title">{{ build.name }}</span>
-      <span class="record-meta">{{ build.owner.username }} • {{ build.status }} • Created {{ build.created_at|date:"M j, Y" }}</span>
+      <span class="record-meta">
+        {{ build.owner.username }}
+        • {{ build.status }}
+        • {{ build.validation_status }}
+        {% if build.needs_revalidation %} • needs revalidation{% endif %}
+        • Created {{ build.created_at|date:"M j, Y" }}
+        {% if build.revalidation_reason %} • {{ build.revalidation_reason }}{% endif %}
+      </span>
     </a>
   </li>
   {% empty %}
-  <li class="record-empty">No builds yet.</li>
+  <li class="record-empty">No builds match this filter.</li>
   {% endfor %}
 </ul>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
@@ -12,7 +13,12 @@ from campaigns.permissions import can_create_npc, can_view_build, is_campaign_dm
 
 from .forms import CharacterBuildForm
 from .models import CharacterBuild
-from .selectors import campaign_builds_for_dm, visible_builds_for_user
+from .selectors import (
+    build_validation_summary,
+    builds_requiring_validation_attention,
+    campaign_builds_for_dm,
+    visible_builds_for_user,
+)
 from .services import (
     build_character_sheet_context,
     revalidate_character_build,
@@ -28,7 +34,12 @@ class PlayerDashboardView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context['campaigns'] = Campaign.objects.filter(
             memberships__user=self.request.user).distinct()
-        context['builds'] = visible_builds_for_user(self.request.user)
+        builds = visible_builds_for_user(self.request.user)
+        context['builds'] = builds
+        context['validation_summary'] = build_validation_summary(builds)
+        context['builds_requiring_attention'] = builds_requiring_validation_attention(
+            builds
+        ).order_by('-updated_at')
         return context
 
 
@@ -156,11 +167,26 @@ class DMAllBuildsView(LoginRequiredMixin, ListView):
         return super().dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
-        return campaign_builds_for_dm(self.request.user, self.campaign)
+        queryset = campaign_builds_for_dm(self.request.user, self.campaign)
+        validation_filter = self.request.GET.get('validation_status', '').upper()
+        if validation_filter == CharacterBuild.ValidationStatus.STALE:
+            return queryset.filter(
+                Q(needs_revalidation=True) |
+                Q(validation_status=CharacterBuild.ValidationStatus.STALE)
+            )
+        if validation_filter in CharacterBuild.ValidationStatus.values:
+            return queryset.filter(validation_status=validation_filter)
+        if validation_filter == 'ATTENTION':
+            return builds_requiring_validation_attention(queryset)
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        all_builds = campaign_builds_for_dm(self.request.user, self.campaign)
         context['campaign'] = self.campaign
+        context['validation_summary'] = build_validation_summary(all_builds)
+        context['active_validation_filter'] = self.request.GET.get(
+            'validation_status', '').upper()
         return context
 
 
