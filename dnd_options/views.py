@@ -113,8 +113,7 @@ class DNDOptionReviewQueueView(LoginRequiredMixin, ListView):
             queryset = queryset.filter(
                 Q(dnd_option__name__icontains=query) |
                 Q(dnd_option__source_url__icontains=query) |
-                Q(reason__icontains=query) |
-                Q(ai_review_reasons__icontains=query)
+                Q(reason__icontains=query)
             )
         if status:
             queryset = queryset.filter(status=status)
