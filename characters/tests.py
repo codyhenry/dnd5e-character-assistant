@@ -2,10 +2,15 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
+from .models import CharacterBuild, CharacterClassLevel
+from .selectors import (
+    build_validation_summary,
+    builds_requiring_validation_attention,
+)
+from .services import require_valid_build_for_reuse, revalidate_character_build
+from .validators import validate_character_build
+
 from campaigns.models import Campaign, CampaignMembership
-from characters.models import CharacterBuild, CharacterClassLevel
-from characters.services import require_valid_build_for_reuse, revalidate_character_build
-from characters.validators import validate_character_build
 from dnd_options.models import DNDOption
 from dnd_options.review_services import (
     apply_suggested_change,
@@ -496,3 +501,173 @@ class CharacterBuildStalenessAndReuseTests(TestCase):
         self.assertTrue(result_after_revalidation.is_valid)
         self.assertEqual(build.validation_status,
                          CharacterBuild.ValidationStatus.VALID)
+
+
+class BuildValidationDashboardTests(TestCase):
+    def setUp(self):
+        user_model = get_user_model()
+        self.dm = user_model.objects.create_user(
+            username="dash_dm",
+            password="pw",
+        )
+        self.player = user_model.objects.create_user(
+            username="dash_player",
+            password="pw",
+        )
+
+        self.campaign = Campaign.objects.create(
+            name="Dashboard Campaign",
+            owner=self.dm,
+        )
+
+        CampaignMembership.objects.create(
+            user=self.dm,
+            campaign=self.campaign,
+            role=CampaignMembership.Role.DM,
+        )
+        CampaignMembership.objects.create(
+            user=self.player,
+            campaign=self.campaign,
+            role=CampaignMembership.Role.PLAYER,
+        )
+
+        self.class_option = DNDOption.objects.create(
+            name="Dashboard Fighter",
+            option_type=DNDOption.OptionType.CLASS,
+            source_category=DNDOption.SourceCategory.OFFICIAL,
+        )
+        self.species_option = DNDOption.objects.create(
+            name="Dashboard Human",
+            option_type=DNDOption.OptionType.SPECIES,
+            source_category=DNDOption.SourceCategory.OFFICIAL,
+        )
+
+    def _build(
+        self,
+        name: str,
+        validation_status: str,
+        *,
+        needs_revalidation: bool = False,
+    ) -> CharacterBuild:
+        build = CharacterBuild.objects.create(
+            owner=self.player,
+            campaign=self.campaign,
+            name=name,
+            character_level=1,
+            species_option=self.species_option,
+            validation_status=validation_status,
+            needs_revalidation=needs_revalidation,
+            revalidation_reason="Rules changed" if needs_revalidation else "",
+        )
+
+        CharacterClassLevel.objects.create(
+            character_build=build,
+            class_option=self.class_option,
+            level_count=1,
+            ordering=1,
+        )
+
+        return build
+
+    def test_build_validation_summary_counts_statuses(self):
+        self._build("Valid Build", CharacterBuild.ValidationStatus.VALID)
+        self._build(
+            "Old Build",
+            CharacterBuild.ValidationStatus.VALID,
+            needs_revalidation=True,
+        )
+        self._build("Broken Build", CharacterBuild.ValidationStatus.INVALID)
+        self._build("Unknown Build", CharacterBuild.ValidationStatus.UNKNOWN)
+
+        summary = build_validation_summary(CharacterBuild.objects.all())
+
+        self.assertEqual(summary["total"], 4)
+        self.assertEqual(summary["valid"], 1)
+        self.assertEqual(summary["stale"], 1)
+        self.assertEqual(summary["invalid"], 1)
+        self.assertEqual(summary["unknown"], 1)
+        self.assertEqual(summary["attention_required"], 2)
+
+    def test_builds_requiring_validation_attention_returns_stale_and_invalid(self):
+        valid_build = self._build(
+            "Valid Build",
+            CharacterBuild.ValidationStatus.VALID,
+        )
+        stale_build = self._build(
+            "Old Build",
+            CharacterBuild.ValidationStatus.VALID,
+            needs_revalidation=True,
+        )
+        invalid_build = self._build(
+            "Broken Build",
+            CharacterBuild.ValidationStatus.INVALID,
+        )
+
+        attention_builds = builds_requiring_validation_attention(
+            CharacterBuild.objects.all()
+        )
+
+        self.assertNotIn(valid_build, attention_builds)
+        self.assertIn(stale_build, attention_builds)
+        self.assertIn(invalid_build, attention_builds)
+
+    def test_player_dashboard_exposes_validation_context(self):
+        self._build(
+            "Old Build",
+            CharacterBuild.ValidationStatus.VALID,
+            needs_revalidation=True,
+        )
+        self.client.login(username="dash_player", password="pw")
+
+        response = self.client.get(reverse("characters:player_dashboard"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["validation_summary"]["stale"], 1)
+        self.assertContains(response, "Builds Needing Attention")
+        self.assertContains(response, "Old Build")
+
+    def test_dm_build_list_filters_attention_builds(self):
+        self._build("Valid Build", CharacterBuild.ValidationStatus.VALID)
+        self._build("Broken Build", CharacterBuild.ValidationStatus.INVALID)
+        self.client.login(username="dash_dm", password="pw")
+
+        response = self.client.get(
+            reverse("characters:dm_all_builds", args=[self.campaign.pk]),
+            data={"validation_status": "ATTENTION"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Broken Build")
+        self.assertNotContains(response, "Valid Build")
+
+    def test_dm_build_list_filters_stale_builds(self):
+        self._build("Valid Build", CharacterBuild.ValidationStatus.VALID)
+        self._build(
+            "Old Build",
+            CharacterBuild.ValidationStatus.VALID,
+            needs_revalidation=True,
+        )
+        self.client.login(username="dash_dm", password="pw")
+
+        response = self.client.get(
+            reverse("characters:dm_all_builds", args=[self.campaign.pk]),
+            data={"validation_status": "STALE"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Old Build")
+        self.assertNotContains(response, "Valid Build")
+
+    def test_dm_build_list_exposes_validation_summary_context(self):
+        self._build("Valid Build", CharacterBuild.ValidationStatus.VALID)
+        self._build("Broken Build", CharacterBuild.ValidationStatus.INVALID)
+        self.client.login(username="dash_dm", password="pw")
+
+        response = self.client.get(
+            reverse("characters:dm_all_builds", args=[self.campaign.pk])
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["validation_summary"]["total"], 2)
+        self.assertEqual(response.context["validation_summary"]["valid"], 1)
+        self.assertEqual(response.context["validation_summary"]["invalid"], 1)
