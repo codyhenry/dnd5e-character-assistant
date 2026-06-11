@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
+from django.db.models import Q
 from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
@@ -29,6 +30,13 @@ from .review_services import (
     resolve_review,
 )
 from .services import import_dnd_option_from_ai_payload
+
+
+OPEN_REVIEW_STATUSES = [
+    DNDOptionReview.Status.OPEN,
+    DNDOptionReview.Status.IN_REVIEW,
+    DNDOptionReview.Status.CHANGES_REQUESTED,
+]
 
 
 def _is_dm_or_admin(user) -> bool:
@@ -91,14 +99,51 @@ class DNDOptionReviewQueueView(LoginRequiredMixin, ListView):
     context_object_name = 'reviews'
 
     def get_queryset(self):
-        return DNDOptionReview.objects.select_related('dnd_option').exclude(
-            status__in=[
-                DNDOptionReview.Status.APPROVED,
-                DNDOptionReview.Status.REJECTED,
-                DNDOptionReview.Status.NO_CHANGE_NEEDED,
-                DNDOptionReview.Status.CLOSED,
-            ]
+        queryset = DNDOptionReview.objects.select_related('dnd_option', 'assigned_to').filter(
+            status__in=OPEN_REVIEW_STATUSES
         )
+
+        query = self.request.GET.get('q', '').strip()
+        status = self.request.GET.get('status', '').strip()
+        severity = self.request.GET.get('severity', '').strip()
+        option_type = self.request.GET.get('option_type', '').strip()
+        source_category = self.request.GET.get('source_category', '').strip()
+
+        if query:
+            queryset = queryset.filter(
+                Q(dnd_option__name__icontains=query) |
+                Q(dnd_option__source_url__icontains=query) |
+                Q(reason__icontains=query) |
+                Q(ai_review_reasons__icontains=query)
+            )
+        if status:
+            queryset = queryset.filter(status=status)
+        if severity:
+            queryset = queryset.filter(severity=severity)
+        if option_type:
+            queryset = queryset.filter(dnd_option__option_type=option_type)
+        if source_category:
+            queryset = queryset.filter(dnd_option__source_category=source_category)
+
+        return queryset.order_by('-updated_at')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filters'] = {
+            'q': self.request.GET.get('q', '').strip(),
+            'status': self.request.GET.get('status', '').strip(),
+            'severity': self.request.GET.get('severity', '').strip(),
+            'option_type': self.request.GET.get('option_type', '').strip(),
+            'source_category': self.request.GET.get('source_category', '').strip(),
+        }
+        context['status_choices'] = [
+            choice for choice in DNDOptionReview.Status.choices
+            if choice[0] in OPEN_REVIEW_STATUSES
+        ]
+        context['severity_choices'] = DNDOptionReview.Severity.choices
+        context['option_type_choices'] = DNDOption.OptionType.choices
+        context['source_category_choices'] = DNDOption.SourceCategory.choices
+        return context
 
 
 class DNDOptionReviewDetailView(LoginRequiredMixin, DetailView):
